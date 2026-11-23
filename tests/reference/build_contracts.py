@@ -85,9 +85,10 @@ CONNECTION_TYPES: dict[str, dict[str, Any]] = {
         "display_name": "YouTube channel analytics",
         "description": (
             "A YouTube channel, authorized to read its YouTube Analytics reports and to "
-            "manage its YouTube Analytics groups."
+            "manage its YouTube Analytics groups; youtube.readonly only tells which channel "
+            "is connected."
         ),
-        "scopes": ["yt-analytics.readonly"],
+        "scopes": ["yt-analytics.readonly", "youtube.readonly"],
     },
     "youtube_analytics_channel_monetary": {
         "display_name": "YouTube channel analytics with revenue",
@@ -95,7 +96,11 @@ CONNECTION_TYPES: dict[str, dict[str, Any]] = {
             "A YouTube channel as above, also authorized to read revenue and ad performance "
             "metrics (the channel must be in the YouTube Partner Program)."
         ),
-        "scopes": ["yt-analytics.readonly", "yt-analytics-monetary.readonly"],
+        "scopes": [
+            "yt-analytics.readonly",
+            "yt-analytics-monetary.readonly",
+            "youtube.readonly",
+        ],
     },
 }
 #: The connection types that allow revenue metrics.
@@ -793,6 +798,22 @@ def actions_manifest(rows: list[dict[str, Any]]) -> dict[str, Any]:
             }
         )
         actions.append(action)
+    actions.append(
+        {
+            "action_id": "verify_identity",
+            "title": "Verify YouTube channel",
+            "description": (
+                "Run by Flow Steward after a new authorization: reads the channel of the "
+                "connected Google account (GET /youtube/v3/channels, mine) and returns its id "
+                "and title."
+            ),
+            "required_scopes": ["extension:invoke"],
+            "handler": {"mode": "extension"},
+            "mutates_platform": False,
+            "workflow_visible": False,
+            "parameters": [],
+        }
+    )
     return {"actions": actions}
 
 
@@ -912,6 +933,7 @@ def oauth_provider() -> dict[str, Any]:
                 ],
             }
         ],
+        "post_connect_action_id": "verify_identity",
     }
 
 
@@ -981,7 +1003,7 @@ def extension_yaml(rows: list[dict[str, Any]], registry: dict[str, Any]) -> dict
                 "several."
             ),
         },
-        "egress": {"hosts": ["youtubeanalytics.googleapis.com"]},
+        "egress": {"hosts": ["youtubeanalytics.googleapis.com", "www.googleapis.com"]},
         "callbacks": [
             {
                 "callback_id": "oauth_authorization",

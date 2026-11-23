@@ -235,7 +235,8 @@ actions:
 - action_id: create_group
   title: Create group
   description: Creates a YouTube Analytics group with a title for items of one type (default youtube#video).
-    Returns the new group_id; add items with Add video to group.
+    Returns the new group_id; add items with Add video to group. Google may require the youtube scope
+    for groups; then the step returns a permission refusal.
   required_scopes:
   - extension:invoke
   handler:
@@ -286,6 +287,7 @@ actions:
   title: Add video to group
   description: Adds a video to a YouTube Analytics group of videos. When the video is already in the group
     YouTube answers HTTP 204 and the step returns already_in_group true; a full group is refused (groupContainsMaximumNumberOfItems).
+    Google may require the youtube scope for groups; then the step returns a permission refusal.
   required_scopes:
   - extension:invoke
   handler:
@@ -610,3 +612,14 @@ actions:
   - external_effect_status
   - definitely_no_external_effect
   error_codes: *id002
+- action_id: verify_identity
+  title: Verify YouTube channel
+  description: 'Run by Flow Steward after a new authorization: reads the channel of the connected Google
+    account (GET /youtube/v3/channels, mine) and returns its id and title.'
+  required_scopes:
+  - extension:invoke
+  handler:
+    mode: extension
+  mutates_platform: false
+  workflow_visible: false
+  parameters: []

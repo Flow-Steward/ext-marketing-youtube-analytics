@@ -63,7 +63,7 @@ def test_every_method_of_the_source_is_a_step_or_excluded_with_a_reason() -> Non
     manifest = [o["operation_id"] for o in operations()]
     assert manifest[: len(EVERYDAY)] == EVERYDAY
     assert sorted(manifest[len(EVERYDAY) :]) == sorted(registry) and len(manifest) == 15
-    assert set(manifest) == set(catalog.OPERATION_IDS)
+    assert set(manifest) | {"verify_identity"} == set(catalog.OPERATION_IDS)
     assert set(names.TITLES) == covered
 
 
@@ -166,12 +166,12 @@ def test_every_everyday_step_refuses_inputs_it_does_not_declare() -> None:
         assert "surely_unknown" in result["error"] and fake.calls == []
 
 
-def test_there_is_no_post_connect_action() -> None:
-    # The YouTube extension's verify_identity reads channels.list of the YouTube Data API,
-    # whose scopes this extension does not ask for.
+def test_the_post_connect_action_is_the_only_action_that_is_not_a_step() -> None:
+    # verify_identity reads channels.list of the YouTube Data API (mine), allowed by the
+    # youtube.readonly scope every connection type asks for.
     actions = {a["action_id"] for a in load("ui/actions/actions.yaml")["actions"]}
-    assert actions == {o["operation_id"] for o in operations()}
-    assert "verify_identity" not in catalog.OPERATION_IDS
+    assert actions == {o["operation_id"] for o in operations()} | {"verify_identity"}
+    assert "verify_identity" in catalog.OPERATION_IDS
 
 
 def test_oauth_is_declared_like_the_flow_steward_youtube_extension() -> None:
@@ -188,7 +188,7 @@ def test_oauth_is_declared_like_the_flow_steward_youtube_extension() -> None:
     }
     assert provider["revocation_endpoint"] == {"url": "https://oauth2.googleapis.com/revoke"}
     assert provider["callback_id"] == "oauth_authorization"
-    assert "post_connect_action_id" not in provider
+    assert provider["post_connect_action_id"] == "verify_identity"
     intent = provider["authorization_intents"][0]
     assert intent["static_parameters"] == {
         "access_type": "offline",
@@ -222,10 +222,14 @@ def test_connection_types_ask_for_scopes_the_source_names() -> None:
         assert set(auth["scopes"]["required"]) <= known
         assert auth["scopes"]["optional"] == []
         assert row["capabilities"] == {"test_connection": True}
-    assert types[0]["auth"]["scopes"]["required"] == [SCOPE + "yt-analytics.readonly"]
+    assert types[0]["auth"]["scopes"]["required"] == [
+        SCOPE + "yt-analytics.readonly",
+        SCOPE + "youtube.readonly",
+    ]
     assert types[1]["auth"]["scopes"]["required"] == [
         SCOPE + "yt-analytics.readonly",
         SCOPE + "yt-analytics-monetary.readonly",
+        SCOPE + "youtube.readonly",
     ]
     assert generic._data()["revenue_connection_types"] == ["youtube_analytics_channel_monetary"]
     from runtime.connection import CONNECTION_TYPES, REVENUE_TYPES
@@ -316,10 +320,11 @@ def test_ui_pages_have_no_tables_and_no_forbidden_words() -> None:
             assert word not in lowered, (page_id, word)
 
 
-def test_the_icon_is_a_128_png_and_branding_records_its_source() -> None:
+def test_the_icon_is_a_square_png_with_the_logo_at_least_100_px_tall() -> None:
     data = (BUNDLE / "icon.png").read_bytes()
     assert data.startswith(b"\x89PNG\r\n\x1a\n")
-    assert struct.unpack(">II", data[16:24]) == (128, 128)
+    assert struct.unpack(">II", data[16:24]) == (256, 256)
+    assert "180 × 126" in (BUNDLE / "BRANDING.md").read_text(encoding="utf-8")
     branding = (BUNDLE / "BRANDING.md").read_text(encoding="utf-8")
     assert hashlib.sha256(data).hexdigest() in branding
     assert "youtube-icon.zip" in branding
@@ -359,7 +364,8 @@ def test_the_runtime_names_no_server_beyond_youtube_analytics() -> None:
         hosts |= set(re.findall(r"https://([a-z0-9.-]+)", path.read_text(encoding="utf-8")))
     assert hosts <= {"youtubeanalytics.googleapis.com", "developers.google.com"}
     egress = set(load("extension.yaml")["egress"]["hosts"])
-    assert egress == {"youtubeanalytics.googleapis.com"}
+    # www.googleapis.com only for verify_identity (YouTube Data API channels.list, mine).
+    assert egress == {"youtubeanalytics.googleapis.com", "www.googleapis.com"}
     for api, facts in build_contracts.sources_facts().items():
         assert facts["root_url"].removeprefix("https://").rstrip("/") in egress, api
 
@@ -389,3 +395,20 @@ def test_readme_follows_the_structure() -> None:
     ]
     assert '<img src="icon.png"' in readme and "img.shields.io" in readme
     assert readme.rstrip().splitlines()[-1].startswith("YouTube and the YouTube logo")
+
+
+def test_the_post_connect_action_names_the_channel_and_is_not_a_step() -> None:
+    [action] = [
+        a for a in load("ui/actions/actions.yaml")["actions"] if a["action_id"] == "verify_identity"
+    ]
+    assert action["workflow_visible"] is False and action["mutates_platform"] is False
+    assert "verify_identity" not in {o["operation_id"] for o in operations()}
+    provider = load("extension.yaml")["runtime"]["extension_contract_v2"]["oauth_providers"][0]
+    assert provider["post_connect_action_id"] == "verify_identity"
+
+
+def test_every_connection_type_asks_for_youtube_readonly_to_know_the_channel() -> None:
+    readonly = "https://www.googleapis.com/auth/youtube.readonly"
+    for row in load("contracts/connection_types.yaml")["connection_types"]:
+        assert readonly in row["auth"]["scopes"]["required"], row["connection_type_id"]
+    assert "www.googleapis.com" in load("extension.yaml")["egress"]["hosts"]

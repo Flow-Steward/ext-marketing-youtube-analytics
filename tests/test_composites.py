@@ -41,6 +41,20 @@ def test_test_connection_reads_a_day_of_views() -> None:
     assert fake.calls[0].path == "/v2/reports"
 
 
+def test_the_post_connect_action_names_the_channel() -> None:
+    fake = FakeYouTube(ok({"items": [{"id": "UC1", "snippet": {"title": "My channel"}}]}))
+    out = run("verify_identity", {}, fake)["result"]
+    assert out == {"subject": "UC1", "verified_display_name": "My channel", "health": "ok"}
+    assert fake.calls[0].host == "www.googleapis.com"
+    assert fake.calls[0].path == "/youtube/v3/channels"
+    assert ("mine", "true") in fake.calls[0].query
+
+
+def test_the_post_connect_action_without_a_channel_is_not_found() -> None:
+    result = run("verify_identity", {}, FakeYouTube(ok({"items": []})))
+    assert result["ok"] is False and result["error_code"] == "not_found"
+
+
 def test_test_connection_refused_by_google_is_an_authentication_failure() -> None:
     fake = FakeYouTube(refuse(403, google_error(403, "forbidden", "Forbidden")))
     result = run("test_connection", {}, fake)

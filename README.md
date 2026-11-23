@@ -53,8 +53,8 @@ All 8 methods of the YouTube Analytics API v2 are also available as steps: repor
 ## Requirements
 
 - A YouTube channel and its Google account.
-- A Google Cloud project with the YouTube Analytics API enabled and an OAuth client of the type Web application; its Client ID and Client Secret are entered on the Connection page. Whether Google must verify the app follows Google's policies for the scopes it asks for.
-- The connection type: **YouTube channel analytics** (`yt-analytics.readonly`) or **YouTube channel analytics with revenue** (also `yt-analytics-monetary.readonly`; YouTube gives revenue metrics only for channels in the YouTube Partner Program).
+- A Google Cloud project with the YouTube Analytics API and the YouTube Data API v3 enabled and an OAuth client of the type Web application; its Client ID and Client Secret are entered on the Connection page. Whether Google must verify the app follows Google's policies for the scopes it asks for.
+- The connection type: **YouTube channel analytics** (`yt-analytics.readonly`) or **YouTube channel analytics with revenue** (also `yt-analytics-monetary.readonly`; YouTube gives revenue metrics only for channels in the YouTube Partner Program). Both also ask for `youtube.readonly` only to learn which channel is connected, so a reconnection to another channel is refused.
 - Flow Steward 0.9.23 or later.
 
 ## FAQ

@@ -58,6 +58,7 @@ account_scope:
 egress:
   hosts:
   - youtubeanalytics.googleapis.com
+  - www.googleapis.com
 callbacks:
 - callback_id: oauth_authorization
   purpose: oauth_authorization
@@ -160,6 +161,7 @@ runtime:
           validation:
             type: email
             max_length: 320
+      post_connect_action_id: verify_identity
     connection_types: contracts/connection_types.yaml
     operation_manifest: contracts/operation_manifest.yaml
     step_ui_manifest: contracts/step_ui_manifest.yaml

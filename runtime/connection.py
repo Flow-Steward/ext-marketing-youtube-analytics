@@ -38,7 +38,11 @@ CONNECTION_TYPES: frozenset[str] = frozenset(
 #: The connection types whose scopes include yt-analytics-monetary.readonly.
 REVENUE_TYPES: frozenset[str] = frozenset({"youtube_analytics_channel_monetary"})
 #: Host of the API (the ``rootUrl`` of the pinned Discovery document).
-HOSTS: dict[str, str] = {"analytics": "youtubeanalytics.googleapis.com"}
+HOSTS: dict[str, str] = {
+    "analytics": "youtubeanalytics.googleapis.com",
+    # Only for verify_identity: YouTube Data API v3 channels.list (mine), read-only scope.
+    "data": "www.googleapis.com",
+}
 SECRET_FIELDS: frozenset[str] = frozenset({"access_token"})
 #: Shorter tokens could not be removed from answers without mangling them.
 MIN_TOKEN_LENGTH = 16

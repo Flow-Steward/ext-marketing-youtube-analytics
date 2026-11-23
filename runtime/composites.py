@@ -21,7 +21,7 @@ from . import errors, files, generic, outcome, pages, reports
 from .context import Context
 from .errors import invalid
 from .params import integer, text
-from .transport import Answer, dumps_json
+from .transport import Answer, Call, dumps_json
 
 #: GroupContentDetails.itemType: "Valid values for this property are: youtube#channel,
 #: youtube#playlist, youtube#video, youtubePartner#asset".
@@ -194,6 +194,38 @@ def test_connection(context: Context) -> dict[str, Any]:
         "revenue_metrics": context.connection.revenue,
         "day": day,
         "warnings": [],
+    }
+
+
+#: The channel of the authorization: YouTube Data API v3 channels.list (mine=true), allowed
+#: by the youtube.readonly scope every connection type asks for.
+CHANNELS_SHOWN = "GET /youtube/v3/channels"
+
+
+def verify_identity(context: Context) -> dict[str, Any]:
+    """The post-connect action: which YouTube channel the authorization is for."""
+    _closed(context.operation_input, set())
+    call = Call(
+        method="GET",
+        path="/youtube/v3/channels",
+        shown=CHANNELS_SHOWN,
+        api="data",
+        query=(("part", "id,snippet"), ("mine", "true")),
+    )
+    data = generic._read_json(context, context.transport.read(call), CHANNELS_SHOWN)
+    if not isinstance(data, Mapping) or not isinstance(data.get("items"), list):
+        raise pages.bad(CHANNELS_SHOWN, "has no items list")
+    if not data["items"]:
+        raise errors.no_effect(errors.NOT_FOUND, "YouTube found no channel for this Google account")
+    item = data["items"][0]
+    if not isinstance(item, Mapping) or not isinstance(item.get("id"), str) or not item["id"]:
+        raise pages.bad(CHANNELS_SHOWN, "carries no channel id")
+    snippet = item.get("snippet")
+    title = snippet.get("title") if isinstance(snippet, Mapping) else None
+    return {
+        "subject": errors.safe_text(item["id"], 100),
+        "verified_display_name": errors.safe_text(title, 200) if isinstance(title, str) else None,
+        "health": "ok",
     }
 
 
@@ -522,6 +554,7 @@ COMPOSITES: dict[str, Callable[[Context], dict[str, Any]]] = {
     "list_groups": list_groups,
     "create_group": create_group,
     "add_video_to_group": add_video_to_group,
+    "verify_identity": verify_identity,
 }
 #: Everyday steps that change data in YouTube Analytics.
 COMPOSITE_WRITES: frozenset[str] = frozenset({"create_group", "add_video_to_group"})

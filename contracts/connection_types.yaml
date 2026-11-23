@@ -4,13 +4,14 @@ connection_types:
 - connection_type_id: youtube_analytics_channel
   display_name: YouTube channel analytics
   description: A YouTube channel, authorized to read its YouTube Analytics reports and to manage its YouTube
-    Analytics groups.
+    Analytics groups; youtube.readonly only tells which channel is connected.
   auth:
     type: oauth2
     provider_id: google_youtube
     scopes:
       required:
       - https://www.googleapis.com/auth/yt-analytics.readonly
+      - https://www.googleapis.com/auth/youtube.readonly
       optional: []
   capabilities:
     test_connection: true
@@ -25,6 +26,7 @@ connection_types:
       required:
       - https://www.googleapis.com/auth/yt-analytics.readonly
       - https://www.googleapis.com/auth/yt-analytics-monetary.readonly
+      - https://www.googleapis.com/auth/youtube.readonly
       optional: []
   capabilities:
     test_connection: true

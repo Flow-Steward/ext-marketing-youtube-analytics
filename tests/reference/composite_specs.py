@@ -400,7 +400,9 @@ COMPOSITES: list[dict[str, Any]] = [
         "calls": ["POST /v2/groups"],
         "description": (
             "Creates a YouTube Analytics group with a title for items of one type (default "
-            "youtube#video). Returns the new group_id; add items with Add video to group."
+            "youtube#video). Returns the new group_id; add items with Add video to group. "
+            "Google may require the youtube scope for groups; then the step returns a "
+            "permission refusal."
         ),
         "inputs": [
             _text("title", "Title", "The group name.", maxLength=1000, required=True),
@@ -436,7 +438,8 @@ COMPOSITES: list[dict[str, Any]] = [
         "description": (
             "Adds a video to a YouTube Analytics group of videos. When the video is already "
             "in the group YouTube answers HTTP 204 and the step returns already_in_group "
-            "true; a full group is refused (groupContainsMaximumNumberOfItems)."
+            "true; a full group is refused (groupContainsMaximumNumberOfItems). Google may "
+            "require the youtube scope for groups; then the step returns a permission refusal."
         ),
         "inputs": [
             _text("group_id", "Group ID", "The group.", maxLength=100, required=True),

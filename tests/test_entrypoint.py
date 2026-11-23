@@ -94,8 +94,8 @@ def test_health_answers_without_network() -> None:
     report = json.loads(proc.stdout)
     assert report["ok"] is True
     assert report["extension_id"] == "flowsteward.youtube-analytics"
-    # 8 generated steps and 7 everyday steps; no post-connect action.
-    assert report["declared_operations"] == 15
+    # 8 generated steps, 7 everyday steps and the post-connect verify_identity action.
+    assert report["declared_operations"] == 16
     assert report["effect_operations"] == 7
     assert set(report["specification_sha256"]) == {"analytics"}
 

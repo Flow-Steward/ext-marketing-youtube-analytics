@@ -79,7 +79,7 @@ components:
 
     ### Create group
 
-    Creates a YouTube Analytics group with a title for items of one type (default youtube#video). Returns the new group_id; add items with Add video to group.
+    Creates a YouTube Analytics group with a title for items of one type (default youtube#video). Returns the new group_id; add items with Add video to group. Google may require the youtube scope for groups; then the step returns a permission refusal.
 
     Action id `create_group` · changes data in YouTube Analytics · YouTube: `POST /v2/groups`
 
@@ -89,7 +89,7 @@ components:
 
     ### Add video to group
 
-    Adds a video to a YouTube Analytics group of videos. When the video is already in the group YouTube answers HTTP 204 and the step returns already_in_group true; a full group is refused (groupContainsMaximumNumberOfItems).
+    Adds a video to a YouTube Analytics group of videos. When the video is already in the group YouTube answers HTTP 204 and the step returns already_in_group true; a full group is refused (groupContainsMaximumNumberOfItems). Google may require the youtube scope for groups; then the step returns a permission refusal.
 
     Action id `add_video_to_group` · changes data in YouTube Analytics · YouTube: `POST /v2/groupItems`
 

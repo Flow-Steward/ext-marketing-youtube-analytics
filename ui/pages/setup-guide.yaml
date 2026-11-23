@@ -23,6 +23,7 @@ components:
     body: |
       - **YouTube channel analytics** asks for `yt-analytics.readonly`: analytics reports of the channel and its YouTube Analytics groups.
       - **YouTube channel analytics with revenue** also asks for `yt-analytics-monetary.readonly`: revenue and ad performance metrics. YouTube gives them only for channels in the YouTube Partner Program.
+      - Both also ask for `youtube.readonly` only to learn which channel is connected; a reconnection to another channel is refused. Enable the YouTube Data API v3 in the Google Cloud project as well.
 
       The same Google OAuth client can serve the YouTube extension and this one.
   - component_id: setup_reports
