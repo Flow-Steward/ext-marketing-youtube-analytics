@@ -1,0 +1,3521 @@
+{
+ "reports": [
+  {
+   "dimensions": [],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Basic user activity statistics",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 36,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "comments",
+      "likes",
+      "dislikes",
+      "videosAddedToPlaylists",
+      "videosRemovedFromPlaylists",
+      "shares",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks",
+      "subscribersGained",
+      "subscribersLost",
+      "estimatedRevenue",
+      "estimatedAdRevenue",
+      "grossRevenue",
+      "estimatedRedPartnerRevenue",
+      "monetizedPlaybacks",
+      "playbackBasedCpm",
+      "adImpressions",
+      "cpm"
+     ]
+    }
+   ],
+   "monetary_metrics": [
+    "estimatedRevenue",
+    "estimatedAdRevenue",
+    "grossRevenue",
+    "estimatedRedPartnerRevenue",
+    "monetizedPlaybacks",
+    "playbackBasedCpm",
+    "adImpressions",
+    "cpm"
+   ],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports",
+    "Basic stats"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Basic user activity statistics"
+  },
+  {
+   "dimensions": [],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Basic user activity statistics for U.S. states",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 20,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports",
+    "Basic stats"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Basic user activity statistics for U.S. states"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "User activity by country for specific time periods",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 37,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "comments",
+      "likes",
+      "dislikes",
+      "videosAddedToPlaylists",
+      "videosRemovedFromPlaylists",
+      "shares",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks",
+      "subscribersGained",
+      "subscribersLost",
+      "uniques",
+      "estimatedRevenue",
+      "estimatedAdRevenue",
+      "grossRevenue",
+      "estimatedRedPartnerRevenue",
+      "monetizedPlaybacks",
+      "playbackBasedCpm",
+      "adImpressions",
+      "cpm"
+     ]
+    }
+   ],
+   "monetary_metrics": [
+    "estimatedRevenue",
+    "estimatedAdRevenue",
+    "grossRevenue",
+    "estimatedRedPartnerRevenue",
+    "monetizedPlaybacks",
+    "playbackBasedCpm",
+    "adImpressions",
+    "cpm"
+   ],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports",
+    "Time-based"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "User activity by country for specific time periods"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "User activity in U.S. states for specific time periods",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 20,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports",
+    "Time-based"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "User activity in U.S. states for specific time periods"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "User activity by country",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 36,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "comments",
+      "likes",
+      "dislikes",
+      "videosAddedToPlaylists",
+      "videosRemovedFromPlaylists",
+      "shares",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks",
+      "subscribersGained",
+      "subscribersLost",
+      "estimatedRevenue",
+      "estimatedAdRevenue",
+      "grossRevenue",
+      "estimatedRedPartnerRevenue",
+      "monetizedPlaybacks",
+      "playbackBasedCpm",
+      "adImpressions",
+      "cpm"
+     ]
+    }
+   ],
+   "monetary_metrics": [
+    "estimatedRevenue",
+    "estimatedAdRevenue",
+    "grossRevenue",
+    "estimatedRedPartnerRevenue",
+    "monetizedPlaybacks",
+    "playbackBasedCpm",
+    "adImpressions",
+    "cpm"
+   ],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports",
+    "User geography"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "User activity by country"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "country": "US"
+   },
+   "id": "User activity by province",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 20,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports",
+    "User geography"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "User activity by province"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "city"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "country",
+      "province",
+      "subscribedStatus"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "User activity by city (<= 250 results)",
+   "max_results": 250,
+   "metrics": [
+    {
+     "max": 5,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: This report requires you to set the maxResults parameter to an integer value of 250 or less. Unlike most other reports, this report also requires you to specify a value for the sort request parameter.",
+    "Note: If you include the province dimension, you must also use the country==US filter."
+   ],
+   "section": [
+    "Video reports",
+    "User geography"
+   ],
+   "sort_options": [
+    "-views",
+    "-estimatedMinutesWatched"
+   ],
+   "sort_required": true,
+   "title": "User activity by city (<= 250 results)"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "dma"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "day",
+      "month",
+      "creatorContentType",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "country": "US"
+   },
+   "id": "User activity by DMA",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 5,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports",
+    "User geography"
+   ],
+   "sort_options": [
+    "-views",
+    "-estimatedMinutesWatched"
+   ],
+   "sort_required": false,
+   "title": "User activity by DMA"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "subscribedStatus"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "User activity by subscribed status",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 25,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "likes",
+      "dislikes",
+      "videosAddedToPlaylists",
+      "videosRemovedFromPlaylists",
+      "shares",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: The liveOrOnDemand dimension and filter cannot be used in conjunction with the averageViewPercentage metric. As such, each of the following subsections lists two reports. One report supports the liveOrOnDemand dimension (and filter), while the other supports the averageViewPercentage metric."
+   ],
+   "section": [
+    "Video reports",
+    "Playback details"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "User activity by subscribed status"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "subscribedStatus"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "province",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "User activity by subscribed status for provinces",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 20,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: The liveOrOnDemand dimension and filter cannot be used in conjunction with the averageViewPercentage metric. As such, each of the following subsections lists two reports. One report supports the liveOrOnDemand dimension (and filter), while the other supports the averageViewPercentage metric."
+   ],
+   "section": [
+    "Video reports",
+    "Playback details"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "User activity by subscribed status for provinces"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Playback details with optional time dimension and liveOrOnDemand statistics",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 6,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: The liveOrOnDemand dimension and filter cannot be used in conjunction with the averageViewPercentage metric. As such, each of the following subsections lists two reports. One report supports the liveOrOnDemand dimension (and filter), while the other supports the averageViewPercentage metric."
+   ],
+   "section": [
+    "Video reports",
+    "Playback details",
+    "Playback details with optional time dimension"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Playback details with optional time dimension and liveOrOnDemand statistics"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Playback details with optional time dimension and averageViewPercentage metric",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 7,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: The liveOrOnDemand dimension and filter cannot be used in conjunction with the averageViewPercentage metric. As such, each of the following subsections lists two reports. One report supports the liveOrOnDemand dimension (and filter), while the other supports the averageViewPercentage metric."
+   ],
+   "section": [
+    "Video reports",
+    "Playback details",
+    "Playback details with optional time dimension"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Playback details with optional time dimension and averageViewPercentage metric"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Playback details by country with liveOrOnDemand statistics",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 6,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: The liveOrOnDemand dimension and filter cannot be used in conjunction with the averageViewPercentage metric. As such, each of the following subsections lists two reports. One report supports the liveOrOnDemand dimension (and filter), while the other supports the averageViewPercentage metric."
+   ],
+   "section": [
+    "Video reports",
+    "Playback details",
+    "Playback details by country"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Playback details by country with liveOrOnDemand statistics"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Playback details by country with averageViewPercentage metric",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 7,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: The liveOrOnDemand dimension and filter cannot be used in conjunction with the averageViewPercentage metric. As such, each of the following subsections lists two reports. One report supports the liveOrOnDemand dimension (and filter), while the other supports the averageViewPercentage metric."
+   ],
+   "section": [
+    "Video reports",
+    "Playback details",
+    "Playback details by country"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Playback details by country with averageViewPercentage metric"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "country": "US"
+   },
+   "id": "Playback details by province with liveOrOnDemand statistics",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 6,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: The liveOrOnDemand dimension and filter cannot be used in conjunction with the averageViewPercentage metric. As such, each of the following subsections lists two reports. One report supports the liveOrOnDemand dimension (and filter), while the other supports the averageViewPercentage metric."
+   ],
+   "section": [
+    "Video reports",
+    "Playback details",
+    "Playback details by province"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Playback details by province with liveOrOnDemand statistics"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "country": "US"
+   },
+   "id": "Playback details by province with averageViewPercentage metric",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 7,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: The liveOrOnDemand dimension and filter cannot be used in conjunction with the averageViewPercentage metric. As such, each of the following subsections lists two reports. One report supports the liveOrOnDemand dimension (and filter), while the other supports the averageViewPercentage metric."
+   ],
+   "section": [
+    "Video reports",
+    "Playback details",
+    "Playback details by province"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Playback details by province with averageViewPercentage metric"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightPlaybackLocationType"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "day",
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Video playback location report",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports",
+    "Playback locations"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Video playback location report"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightPlaybackLocationDetail"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightPlaybackLocationType"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "insightPlaybackLocationType": "EMBEDDED"
+   },
+   "id": "Playback location detail (<= 25 results)",
+   "max_results": 25,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: This report requires you to set the maxResults parameter to an integer value of 25 or less. Unlike most other reports, this report also requires you to specify a value for the sort request parameter."
+   ],
+   "section": [
+    "Video reports",
+    "Playback locations"
+   ],
+   "sort_options": [
+    "-views",
+    "-estimatedMinutesWatched"
+   ],
+   "sort_required": true,
+   "title": "Playback location detail (<= 25 results)"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightTrafficSourceType"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "day",
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Traffic source",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: This report returns an error if the product of # of queried videos X # of days in date range exceeds 50,000. For example, a query that retrieves data for 500 video IDs can request data for a maximum of 100 days. To reduce the number of rows that a request returns, split your query into multiple queries that specify fewer videos or set shorter date ranges."
+   ],
+   "section": [
+    "Video reports",
+    "Traffic sources"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Traffic source"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightTrafficSourceDetail"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightTrafficSourceType"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Traffic source detail (<= 25 results)",
+   "max_results": 25,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: This report requires you to set the maxResults parameter to an integer value of 25 or less. Unlike most other reports, this report also requires you to specify a value for the sort request parameter."
+   ],
+   "section": [
+    "Video reports",
+    "Traffic sources"
+   ],
+   "sort_options": [
+    "-views",
+    "-estimatedMinutesWatched"
+   ],
+   "sort_required": true,
+   "title": "Traffic source detail (<= 25 results)"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "deviceType"
+     ]
+    },
+    {
+     "max": 5,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "day",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "operatingSystem",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Device type (1)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports",
+    "Device type and operating system"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Device type"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "operatingSystem"
+     ]
+    },
+    {
+     "max": 5,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "day",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "deviceType",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Operating system (1)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports",
+    "Device type and operating system"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Operating system"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 2,
+     "min": 2,
+     "usage": "Required",
+     "values": [
+      "deviceType",
+      "operatingSystem"
+     ]
+    },
+    {
+     "max": 5,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "day",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Operating system and device type (1)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports",
+    "Device type and operating system"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Operating system and device type"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 2,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "ageGroup",
+      "gender"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Viewer demographics (1)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "viewerPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Viewer demographics"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "sharingService"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Engagement and content sharing",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "shares"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Engagement and content sharing"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "elapsedVideoTimeRatio"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "audienceType",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Audience retention",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 5,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "audienceWatchRatio",
+      "relativeRetentionPerformance",
+      "startedWatching",
+      "stoppedWatching",
+      "totalSegmentImpressions"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: This report does not support the ability to specify a comma-separated list of values for the video filter; the value must specify a single video ID."
+   ],
+   "section": [
+    "Video reports"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Audience retention"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "livestreamPosition"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Concurrent viewers (for livestreams)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 2,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "averageConcurrentViewers",
+      "peakConcurrentViewers"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Video reports"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Concurrent viewers (for livestreams)"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Top videos with optional regional filters (<= 200 results)",
+   "max_results": 200,
+   "metrics": [
+    {
+     "max": 36,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "comments",
+      "likes",
+      "dislikes",
+      "videosAddedToPlaylists",
+      "videosRemovedFromPlaylists",
+      "shares",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks",
+      "subscribersGained",
+      "subscribersLost",
+      "estimatedRevenue",
+      "estimatedAdRevenue",
+      "grossRevenue",
+      "estimatedRedPartnerRevenue",
+      "monetizedPlaybacks",
+      "playbackBasedCpm",
+      "adImpressions",
+      "cpm"
+     ]
+    }
+   ],
+   "monetary_metrics": [
+    "estimatedRevenue",
+    "estimatedAdRevenue",
+    "grossRevenue",
+    "estimatedRedPartnerRevenue",
+    "monetizedPlaybacks",
+    "playbackBasedCpm",
+    "adImpressions",
+    "cpm"
+   ],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: These reports require you to set the maxResults parameter to an integer value of 200 or less. Before January 1, 2013 data is only available for the top 10 videos. Unlike most other reports, these reports also require you to specify a value for the sort request parameter."
+   ],
+   "section": [
+    "Video reports",
+    "Top videos"
+   ],
+   "sort_options": [
+    "-views",
+    "-redViews",
+    "-estimatedRevenue",
+    "-estimatedRedPartnerRevenue",
+    "-estimatedMinutesWatched",
+    "-estimatedRedMinutesWatched",
+    "-subscribersGained",
+    "-subscribersLost"
+   ],
+   "sort_required": true,
+   "title": "Top videos with optional regional filters (<= 200 results)"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Top videos by state (<= 200 results)",
+   "max_results": 200,
+   "metrics": [
+    {
+     "max": 20,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: These reports require you to set the maxResults parameter to an integer value of 200 or less. Before January 1, 2013 data is only available for the top 10 videos. Unlike most other reports, these reports also require you to specify a value for the sort request parameter."
+   ],
+   "section": [
+    "Video reports",
+    "Top videos"
+   ],
+   "sort_options": [
+    "-views",
+    "-redViews",
+    "-estimatedMinutesWatched",
+    "-estimatedRedMinutesWatched"
+   ],
+   "sort_required": true,
+   "title": "Top videos by state (<= 200 results)"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "subscribedStatus"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Top videos for subscribed or unsubscribed viewers(<= 200 results)",
+   "max_results": 200,
+   "metrics": [
+    {
+     "max": 25,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "likes",
+      "dislikes",
+      "videosAddedToPlaylists",
+      "videosRemovedFromPlaylists",
+      "shares",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: These reports require you to set the maxResults parameter to an integer value of 200 or less. Before January 1, 2013 data is only available for the top 10 videos. Unlike most other reports, these reports also require you to specify a value for the sort request parameter."
+   ],
+   "section": [
+    "Video reports",
+    "Top videos"
+   ],
+   "sort_options": [
+    "-views",
+    "-redViews",
+    "-estimatedMinutesWatched",
+    "-estimatedRedMinutesWatched"
+   ],
+   "sort_required": true,
+   "title": "Top videos for subscribed or unsubscribed viewers(<= 200 results)"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Top videos by YouTube Product (<= 200 results)",
+   "max_results": 200,
+   "metrics": [
+    {
+     "max": 7,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: These reports require you to set the maxResults parameter to an integer value of 200 or less. Before January 1, 2013 data is only available for the top 10 videos. Unlike most other reports, these reports also require you to specify a value for the sort request parameter."
+   ],
+   "section": [
+    "Video reports",
+    "Top videos"
+   ],
+   "sort_options": [
+    "-views",
+    "-redViews",
+    "-estimatedMinutesWatched",
+    "-estimatedRedMinutesWatched"
+   ],
+   "sort_required": true,
+   "title": "Top videos by YouTube Product (<= 200 results)"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Top videos with playback detail filters (<= 200 results)",
+   "max_results": 200,
+   "metrics": [
+    {
+     "max": 6,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: These reports require you to set the maxResults parameter to an integer value of 200 or less. Before January 1, 2013 data is only available for the top 10 videos. Unlike most other reports, these reports also require you to specify a value for the sort request parameter."
+   ],
+   "section": [
+    "Video reports",
+    "Top videos"
+   ],
+   "sort_options": [
+    "-views",
+    "-redViews",
+    "-estimatedMinutesWatched",
+    "-estimatedRedMinutesWatched"
+   ],
+   "sort_required": true,
+   "title": "Top videos with playback detail filters (<= 200 results)"
+  },
+  {
+   "dimensions": [],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Basic stats",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 11,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistSaves",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Playlist reports"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Basic stats"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Time-based",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 11,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistSaves",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Playlist reports"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Time-based"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "continent",
+      "subContinent"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Playlist activity by country",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 4,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Playlist reports",
+    "User geography"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Playlist activity by country"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "country": "US"
+   },
+   "id": "Playlist activity by province",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 4,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Playlist reports",
+    "User geography"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Playlist activity by province"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightPlaybackLocationType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Playback locations",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 10,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Playlist reports"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Playback locations"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightPlaybackLocationDetail"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightPlaybackLocationType"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "insightPlaybackLocationType": "EMBEDDED"
+   },
+   "id": "Playback location detail (<= 25 results) (2)",
+   "max_results": 25,
+   "metrics": [
+    {
+     "max": 10,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: This report requires you to set the maxResults parameter to a integer value of 25 or less. Unlike most other reports, this report also requires you to specify a value for the sort request parameter."
+   ],
+   "section": [
+    "Playlist reports",
+    "Playback locations"
+   ],
+   "sort_options": [
+    "-playlistViews",
+    "-playlistEstimatedMinutesWatched",
+    "-playlistStarts"
+   ],
+   "sort_required": true,
+   "title": "Playback location detail (<= 25 results)"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightTrafficSourceType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Traffic sources",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 11,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistSaves",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Playlist reports"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Traffic sources"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightTrafficSourceDetail"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightTrafficSourceType"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Traffic source detail (<= 25 results) (2)",
+   "max_results": 25,
+   "metrics": [
+    {
+     "max": 11,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistSaves",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: This report requires you to set the maxResults parameter to a integer value of 25 or less. Unlike most other reports, this report also requires you to specify a value for the sort request parameter."
+   ],
+   "section": [
+    "Playlist reports",
+    "Traffic sources"
+   ],
+   "sort_options": [
+    "-playlistViews",
+    "-playlistEstimatedMinutesWatched",
+    "-playlistStarts"
+   ],
+   "sort_required": true,
+   "title": "Traffic source detail (<= 25 results)"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "deviceType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Device type (2)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 10,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Playlist reports",
+    "Device type and operating system"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Device type"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "operatingSystem"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Operating system (2)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 10,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Playlist reports",
+    "Device type and operating system"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Operating system"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 2,
+     "min": 2,
+     "usage": "Required",
+     "values": [
+      "deviceType",
+      "operatingSystem"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Operating system and device type (2)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 10,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Playlist reports",
+    "Device type and operating system"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Operating system and device type"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 2,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "ageGroup",
+      "gender"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Viewer demographics (2)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "viewerPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Playlist reports"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Viewer demographics"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "playlist"
+     ]
+    }
+   ],
+   "filters": [],
+   "fixed_filters": {},
+   "id": "Top playlists",
+   "max_results": 200,
+   "metrics": [
+    {
+     "max": 7,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistSaves",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [
+    "Note: These reports require you to set the maxResults parameter to an integer value of 200 or less. Before January 1, 2013 data is only available for the top 10 playlists. Unlike most other reports, these reports also require you to specify a value for the sort request parameter."
+   ],
+   "section": [
+    "Playlist reports"
+   ],
+   "sort_options": [
+    "-playlistViews",
+    "-playlistEstimatedMinutesWatched",
+    "-playlistStarts"
+   ],
+   "sort_required": true,
+   "title": "Top playlists"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "membershipsCancellationSurveyReason"
+     ]
+    }
+   ],
+   "filters": [],
+   "fixed_filters": {},
+   "id": "Membership cancellations",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "membershipsCancellationSurveyResponses"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "notes": [],
+   "section": [
+    "Membership reports"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Membership cancellations"
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "adType"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "day"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Ad performance by ad type",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "grossRevenue",
+      "adImpressions",
+      "cpm"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": true,
+   "notes": [
+    "Note: Ad performance reports require an authorization token that grants access to the https://www.googleapis.com/auth/yt-analytics-monetary.readonly scope."
+   ],
+   "section": [
+    "Ad performance reports"
+   ],
+   "sort_options": null,
+   "sort_required": false,
+   "title": "Ad performance by ad type"
+  }
+ ],
+ "source": {
+  "bytes": 306166,
+  "downloaded": "2026-11-23",
+  "last_updated": "2026-11-12",
+  "sha256": "6824db16b213e37c96c15abfbbb96f809a41c914cd30b40645fd559b807be338",
+  "url": "https://developers.google.com/youtube/analytics/channel_reports?hl=en"
+ }
+}

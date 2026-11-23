@@ -1,0 +1,44 @@
+page_id: connection
+title: Connection
+description: Connect a YouTube channel's analytics to this project.
+components:
+  - component_id: youtube_analytics_connections
+    type: connection_form
+    title: YouTube channel analytics
+    description: Add your Google OAuth client once, then connect one or more channels. Flow Steward keeps the authorization, renews it and never shows it again.
+    data:
+      oauth_provider_id: google_youtube
+      connection_type: youtube_analytics_channel
+      oauth_intent: connect
+      test_action: test_connection
+  - component_id: youtube_analytics_monetary_connections
+    type: connection_form
+    title: YouTube channel analytics with revenue
+    description: Channels authorized also for revenue and ad performance metrics. The channel must be in the YouTube Partner Program.
+    data:
+      oauth_provider_id: google_youtube
+      connection_type: youtube_analytics_channel_monetary
+      oauth_intent: connect
+      test_action: test_connection
+  - component_id: connection_how
+    anchor_id: client-credentials
+    type: markdown
+    title: Where to get the Client ID
+    body: |
+      In [Google Cloud](https://console.cloud.google.com/apis/credentials) open **Credentials**, choose your OAuth client of the type **Web application** (or create one, see Setup Guide) and copy its **Client ID** and **Client Secret**. Its authorized redirect URIs must include the OAuth Redirect URI shown above, exactly as shown.
+  - component_id: connection_again
+    anchor_id: authorize-again
+    type: markdown
+    title: Connect again
+    body: |
+      Press **Connect** again when the authorization was withdrawn in the Google account, when it expired, or when you need revenue metrics. Choose the same channel on Google's page.
+  - component_id: connection_help
+    anchor_id: google-api-setup
+    type: markdown
+    title: If it fails
+    body: |
+      - **Invalid client** — the Client ID or Client Secret is wrong, or the client was deleted. Copy both again from Google Cloud.
+      - **redirect_uri_mismatch** on Google's page — add the OAuth Redirect URI shown above to the OAuth client, exactly as shown.
+      - **A step is refused with HTTP 403 saying the API is not enabled or the scope is missing** — enable the YouTube Analytics API in the Google Cloud project, or use the connection type with revenue for revenue metrics.
+      - **Test connection is refused with HTTP 403** — the Google account has no YouTube channel, or another account was chosen on Google's page. Connect again and choose the channel.
+      - **Revenue metrics are refused with HTTP 403** — the channel is not in the YouTube Partner Program; YouTube gives revenue metrics only to its members.

@@ -1,0 +1,18 @@
+page_id: changelog
+title: Changelog
+description: What changed in each release of this extension.
+components:
+- component_id: changelog_entries
+  type: markdown
+  title: Release history
+  body: |
+    ## 0.1.0 — 2026-11-23
+
+    First release, built on the Discovery document of the YouTube Analytics API v2 (revision 20261122, SHA-256 `5fcf9ab54b98f007f21905b55e2a0aaa33ab6a545e6cbedd0780785ba21760e6`) and the report tables of YouTube's channel reports page (updated 2026-11-12), downloaded 2026-11-23.
+
+    - All 8 methods of the API are steps: reports, groups and group items.
+    - Everyday steps: Test connection, Get channel report, Get video report, Get top videos, Get all my groups, Create group and Add video to group.
+    - The report steps check the dimensions, metrics, filters, sort and number of rows against YouTube's report tables before sending, and refuse a combination YouTube does not support, with the reason.
+    - Connections are YouTube channels authorized through your own Google Cloud OAuth client; Flow Steward keeps and renews the authorization. Revenue metrics have their own connection type.
+    - Long reports can be saved as a JSON workflow file. Report numbers are exact decimals.
+    - Changes are sent once and never retried automatically; test runs never send them.

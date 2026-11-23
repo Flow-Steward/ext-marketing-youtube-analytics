@@ -1,0 +1,3716 @@
+{
+ "channel_reports": [
+  {
+   "dimensions": [],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Basic user activity statistics",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 36,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "comments",
+      "likes",
+      "dislikes",
+      "videosAddedToPlaylists",
+      "videosRemovedFromPlaylists",
+      "shares",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks",
+      "subscribersGained",
+      "subscribersLost",
+      "estimatedRevenue",
+      "estimatedAdRevenue",
+      "grossRevenue",
+      "estimatedRedPartnerRevenue",
+      "monetizedPlaybacks",
+      "playbackBasedCpm",
+      "adImpressions",
+      "cpm"
+     ]
+    }
+   ],
+   "monetary_metrics": [
+    "estimatedRevenue",
+    "estimatedAdRevenue",
+    "grossRevenue",
+    "estimatedRedPartnerRevenue",
+    "monetizedPlaybacks",
+    "playbackBasedCpm",
+    "adImpressions",
+    "cpm"
+   ],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Basic user activity statistics for U.S. states",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 20,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "User activity by country for specific time periods",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 37,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "comments",
+      "likes",
+      "dislikes",
+      "videosAddedToPlaylists",
+      "videosRemovedFromPlaylists",
+      "shares",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks",
+      "subscribersGained",
+      "subscribersLost",
+      "uniques",
+      "estimatedRevenue",
+      "estimatedAdRevenue",
+      "grossRevenue",
+      "estimatedRedPartnerRevenue",
+      "monetizedPlaybacks",
+      "playbackBasedCpm",
+      "adImpressions",
+      "cpm"
+     ]
+    }
+   ],
+   "monetary_metrics": [
+    "estimatedRevenue",
+    "estimatedAdRevenue",
+    "grossRevenue",
+    "estimatedRedPartnerRevenue",
+    "monetizedPlaybacks",
+    "playbackBasedCpm",
+    "adImpressions",
+    "cpm"
+   ],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "User activity in U.S. states for specific time periods",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 20,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "User activity by country",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 36,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "comments",
+      "likes",
+      "dislikes",
+      "videosAddedToPlaylists",
+      "videosRemovedFromPlaylists",
+      "shares",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks",
+      "subscribersGained",
+      "subscribersLost",
+      "estimatedRevenue",
+      "estimatedAdRevenue",
+      "grossRevenue",
+      "estimatedRedPartnerRevenue",
+      "monetizedPlaybacks",
+      "playbackBasedCpm",
+      "adImpressions",
+      "cpm"
+     ]
+    }
+   ],
+   "monetary_metrics": [
+    "estimatedRevenue",
+    "estimatedAdRevenue",
+    "grossRevenue",
+    "estimatedRedPartnerRevenue",
+    "monetizedPlaybacks",
+    "playbackBasedCpm",
+    "adImpressions",
+    "cpm"
+   ],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "country": "US"
+   },
+   "id": "User activity by province",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 20,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "city"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "country",
+      "province",
+      "subscribedStatus"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "User activity by city (<= 250 results)",
+   "max_results": 250,
+   "metrics": [
+    {
+     "max": 5,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": [
+    "-views",
+    "-estimatedMinutesWatched"
+   ],
+   "sort_required": true
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "dma"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "day",
+      "month",
+      "creatorContentType",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "country": "US"
+   },
+   "id": "User activity by DMA",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 5,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": [
+    "-views",
+    "-estimatedMinutesWatched"
+   ],
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "subscribedStatus"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "User activity by subscribed status",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 25,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "likes",
+      "dislikes",
+      "videosAddedToPlaylists",
+      "videosRemovedFromPlaylists",
+      "shares",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "subscribedStatus"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "province",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "User activity by subscribed status for provinces",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 20,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Playback details with optional time dimension and liveOrOnDemand statistics",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 6,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Playback details with optional time dimension and averageViewPercentage metric",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 7,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Playback details by country with liveOrOnDemand statistics",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 6,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Playback details by country with averageViewPercentage metric",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 7,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "country": "US"
+   },
+   "id": "Playback details by province with liveOrOnDemand statistics",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 6,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "country": "US"
+   },
+   "id": "Playback details by province with averageViewPercentage metric",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 7,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightPlaybackLocationType"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "day",
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Video playback location report",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightPlaybackLocationDetail"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightPlaybackLocationType"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "insightPlaybackLocationType": "EMBEDDED"
+   },
+   "id": "Playback location detail (<= 25 results)",
+   "max_results": 25,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": [
+    "-views",
+    "-estimatedMinutesWatched"
+   ],
+   "sort_required": true
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightTrafficSourceType"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "day",
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Traffic source",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightTrafficSourceDetail"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightTrafficSourceType"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Traffic source detail (<= 25 results)",
+   "max_results": 25,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": [
+    "-views",
+    "-estimatedMinutesWatched"
+   ],
+   "sort_required": true
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "deviceType"
+     ]
+    },
+    {
+     "max": 5,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "day",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "operatingSystem",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Device type (1)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "operatingSystem"
+     ]
+    },
+    {
+     "max": 5,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "day",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 4,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "deviceType",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Operating system (1)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 2,
+     "min": 2,
+     "usage": "Required",
+     "values": [
+      "deviceType",
+      "operatingSystem"
+     ]
+    },
+    {
+     "max": 5,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "day",
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Operating system and device type (1)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 2,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "ageGroup",
+      "gender"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Viewer demographics (1)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "viewerPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "sharingService"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "creatorContentType",
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Engagement and content sharing",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "shares"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "elapsedVideoTimeRatio"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "audienceType",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Audience retention",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 5,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "audienceWatchRatio",
+      "relativeRetentionPerformance",
+      "startedWatching",
+      "stoppedWatching",
+      "totalSegmentImpressions"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "livestreamPosition"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Concurrent viewers (for livestreams)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 2,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "averageConcurrentViewers",
+      "peakConcurrentViewers"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Top videos with optional regional filters (<= 200 results)",
+   "max_results": 200,
+   "metrics": [
+    {
+     "max": 36,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "comments",
+      "likes",
+      "dislikes",
+      "videosAddedToPlaylists",
+      "videosRemovedFromPlaylists",
+      "shares",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks",
+      "subscribersGained",
+      "subscribersLost",
+      "estimatedRevenue",
+      "estimatedAdRevenue",
+      "grossRevenue",
+      "estimatedRedPartnerRevenue",
+      "monetizedPlaybacks",
+      "playbackBasedCpm",
+      "adImpressions",
+      "cpm"
+     ]
+    }
+   ],
+   "monetary_metrics": [
+    "estimatedRevenue",
+    "estimatedAdRevenue",
+    "grossRevenue",
+    "estimatedRedPartnerRevenue",
+    "monetizedPlaybacks",
+    "playbackBasedCpm",
+    "adImpressions",
+    "cpm"
+   ],
+   "monetary_scope_required": false,
+   "sort_options": [
+    "-views",
+    "-redViews",
+    "-estimatedRevenue",
+    "-estimatedRedPartnerRevenue",
+    "-estimatedMinutesWatched",
+    "-estimatedRedMinutesWatched",
+    "-subscribersGained",
+    "-subscribersLost"
+   ],
+   "sort_required": true
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "subscribedStatus"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Top videos by state (<= 200 results)",
+   "max_results": 200,
+   "metrics": [
+    {
+     "max": 20,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": [
+    "-views",
+    "-redViews",
+    "-estimatedMinutesWatched",
+    "-estimatedRedMinutesWatched"
+   ],
+   "sort_required": true
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "subscribedStatus"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Top videos for subscribed or unsubscribed viewers(<= 200 results)",
+   "max_results": 200,
+   "metrics": [
+    {
+     "max": 25,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "likes",
+      "dislikes",
+      "videosAddedToPlaylists",
+      "videosRemovedFromPlaylists",
+      "shares",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage",
+      "annotationClickThroughRate",
+      "annotationCloseRate",
+      "annotationImpressions",
+      "annotationClickableImpressions",
+      "annotationClosableImpressions",
+      "annotationClicks",
+      "annotationCloses",
+      "cardClickRate",
+      "cardTeaserClickRate",
+      "cardImpressions",
+      "cardTeaserImpressions",
+      "cardClicks",
+      "cardTeaserClicks"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": [
+    "-views",
+    "-redViews",
+    "-estimatedMinutesWatched",
+    "-estimatedRedMinutesWatched"
+   ],
+   "sort_required": true
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 2,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Top videos by YouTube Product (<= 200 results)",
+   "max_results": 200,
+   "metrics": [
+    {
+     "max": 7,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration",
+      "averageViewPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": [
+    "-views",
+    "-redViews",
+    "-estimatedMinutesWatched",
+    "-estimatedRedMinutesWatched"
+   ],
+   "sort_required": true
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "video"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "creatorContentType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "province",
+      "continent",
+      "subContinent"
+     ]
+    },
+    {
+     "max": 3,
+     "min": 0,
+     "usage": "Use 0 or more",
+     "values": [
+      "liveOrOnDemand",
+      "subscribedStatus",
+      "youtubeProduct"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Top videos with playback detail filters (<= 200 results)",
+   "max_results": 200,
+   "metrics": [
+    {
+     "max": 6,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "redViews",
+      "estimatedMinutesWatched",
+      "estimatedRedMinutesWatched",
+      "averageViewDuration"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": [
+    "-views",
+    "-redViews",
+    "-estimatedMinutesWatched",
+    "-estimatedRedMinutesWatched"
+   ],
+   "sort_required": true
+  },
+  {
+   "dimensions": [],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Basic stats",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 11,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistSaves",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "day",
+      "month"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Time-based",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 11,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistSaves",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "continent",
+      "subContinent"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Playlist activity by country",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 4,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "province"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "country"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "country": "US"
+   },
+   "id": "Playlist activity by province",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 4,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightPlaybackLocationType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Playback locations",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 10,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightPlaybackLocationDetail"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightPlaybackLocationType"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {
+    "insightPlaybackLocationType": "EMBEDDED"
+   },
+   "id": "Playback location detail (<= 25 results) (2)",
+   "max_results": 25,
+   "metrics": [
+    {
+     "max": 10,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": [
+    "-playlistViews",
+    "-playlistEstimatedMinutesWatched",
+    "-playlistStarts"
+   ],
+   "sort_required": true
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightTrafficSourceType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Traffic sources",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 11,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistSaves",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightTrafficSourceDetail"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "insightTrafficSourceType"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Traffic source detail (<= 25 results) (2)",
+   "max_results": 25,
+   "metrics": [
+    {
+     "max": 11,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistSaves",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": [
+    "-playlistViews",
+    "-playlistEstimatedMinutesWatched",
+    "-playlistStarts"
+   ],
+   "sort_required": true
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "deviceType"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Device type (2)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 10,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "operatingSystem"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Operating system (2)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 10,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 2,
+     "min": 2,
+     "usage": "Required",
+     "values": [
+      "deviceType",
+      "operatingSystem"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Operating system and device type (2)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 10,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "engagedViews",
+      "views",
+      "estimatedMinutesWatched",
+      "averageViewDuration",
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 2,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "ageGroup",
+      "gender"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Use exactly 1",
+     "values": [
+      "playlist",
+      "group"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Viewer demographics (2)",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "viewerPercentage"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "playlist"
+     ]
+    }
+   ],
+   "filters": [],
+   "fixed_filters": {},
+   "id": "Top playlists",
+   "max_results": 200,
+   "metrics": [
+    {
+     "max": 7,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "averageTimeInPlaylist",
+      "playlistAverageViewDuration",
+      "playlistEstimatedMinutesWatched",
+      "playlistSaves",
+      "playlistStarts",
+      "playlistViews",
+      "viewsPerPlaylistStart"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": [
+    "-playlistViews",
+    "-playlistEstimatedMinutesWatched",
+    "-playlistStarts"
+   ],
+   "sort_required": true
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "membershipsCancellationSurveyReason"
+     ]
+    }
+   ],
+   "filters": [],
+   "fixed_filters": {},
+   "id": "Membership cancellations",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "membershipsCancellationSurveyResponses"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": false,
+   "sort_options": null,
+   "sort_required": false
+  },
+  {
+   "dimensions": [
+    {
+     "max": 1,
+     "min": 1,
+     "usage": "Required",
+     "values": [
+      "adType"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Optional",
+     "values": [
+      "day"
+     ]
+    }
+   ],
+   "filters": [
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "video",
+      "group"
+     ]
+    },
+    {
+     "max": 1,
+     "min": 0,
+     "usage": "Use 0 or 1",
+     "values": [
+      "country",
+      "continent",
+      "subContinent"
+     ]
+    }
+   ],
+   "fixed_filters": {},
+   "id": "Ad performance by ad type",
+   "max_results": null,
+   "metrics": [
+    {
+     "max": 3,
+     "min": 1,
+     "usage": "Use 1 or more",
+     "values": [
+      "grossRevenue",
+      "adImpressions",
+      "cpm"
+     ]
+    }
+   ],
+   "monetary_metrics": [],
+   "monetary_scope_required": true,
+   "sort_options": null,
+   "sort_required": false
+  }
+ ],
+ "channel_reports_source": {
+  "bytes": 306166,
+  "downloaded": "2026-11-23",
+  "last_updated": "2026-11-12",
+  "sha256": "6824db16b213e37c96c15abfbbb96f809a41c914cd30b40645fd559b807be338",
+  "url": "https://developers.google.com/youtube/analytics/channel_reports?hl=en"
+ },
+ "excluded": {},
+ "operations": {
+  "add_analytics_group_item": {
+   "answer": "json",
+   "api": "analytics",
+   "area": "Groups",
+   "body": {
+    "json": {
+     "properties": [
+      "errors",
+      "etag",
+      "groupId",
+      "id",
+      "kind",
+      "resource"
+     ],
+     "schema": "GroupItem"
+    },
+    "required": true
+   },
+   "description": "Adds an item to a YouTube Analytics group. YouTube: Creates a group item. Calls youtubeAnalytics.groupItems.insert (POST /v2/groupItems) of the YouTube Analytics API. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "kind": "write",
+   "method": "POST",
+   "pager": null,
+   "path": "/v2/groupItems",
+   "path_params": [],
+   "processing": {
+    "accepted_always": false,
+    "check": null
+   },
+   "query": [
+    {
+     "description": "This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners that own and manage many different YouTube channels. The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube user who is acting on behalf of the content owner specified in the parameter value. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The account that the user authenticates with must be linked to the specified YouTube content owner.",
+     "input": "on_behalf_of_content_owner",
+     "name": "onBehalfOfContentOwner",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    }
+   ],
+   "resource": "groupItems",
+   "scopes": [
+    "https://www.googleapis.com/auth/youtube",
+    "https://www.googleapis.com/auth/youtube.readonly",
+    "https://www.googleapis.com/auth/youtubepartner",
+    "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+    "https://www.googleapis.com/auth/yt-analytics.readonly"
+   ],
+   "title": "Add analytics group item",
+   "vendor_method_id": "youtubeAnalytics.groupItems.insert"
+  },
+  "create_analytics_group": {
+   "answer": "json",
+   "api": "analytics",
+   "area": "Groups",
+   "body": {
+    "json": {
+     "properties": [
+      "contentDetails",
+      "errors",
+      "etag",
+      "id",
+      "kind",
+      "snippet"
+     ],
+     "schema": "Group"
+    },
+    "required": true
+   },
+   "description": "Creates a YouTube Analytics group of videos, playlists, channels or assets. YouTube: Creates a group. Calls youtubeAnalytics.groups.insert (POST /v2/groups) of the YouTube Analytics API. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "kind": "write",
+   "method": "POST",
+   "pager": null,
+   "path": "/v2/groups",
+   "path_params": [],
+   "processing": {
+    "accepted_always": false,
+    "check": null
+   },
+   "query": [
+    {
+     "description": "This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners that own and manage many different YouTube channels. The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube user who is acting on behalf of the content owner specified in the parameter value. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The account that the user authenticates with must be linked to the specified YouTube content owner.",
+     "input": "on_behalf_of_content_owner",
+     "name": "onBehalfOfContentOwner",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    }
+   ],
+   "resource": "groups",
+   "scopes": [
+    "https://www.googleapis.com/auth/youtube",
+    "https://www.googleapis.com/auth/youtube.readonly",
+    "https://www.googleapis.com/auth/youtubepartner",
+    "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+    "https://www.googleapis.com/auth/yt-analytics.readonly"
+   ],
+   "title": "Create analytics group",
+   "vendor_method_id": "youtubeAnalytics.groups.insert"
+  },
+  "delete_analytics_group": {
+   "answer": "json",
+   "api": "analytics",
+   "area": "Groups",
+   "body": null,
+   "description": "Deletes a YouTube Analytics group. YouTube: Deletes a group. Calls youtubeAnalytics.groups.delete (DELETE /v2/groups) of the YouTube Analytics API. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "kind": "write",
+   "method": "DELETE",
+   "pager": null,
+   "path": "/v2/groups",
+   "path_params": [],
+   "processing": {
+    "accepted_always": false,
+    "check": null
+   },
+   "query": [
+    {
+     "description": "The id parameter specifies the YouTube group ID of the group that is being deleted.",
+     "input": "id",
+     "name": "id",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    },
+    {
+     "description": "This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners that own and manage many different YouTube channels. The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube user who is acting on behalf of the content owner specified in the parameter value. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The account that the user authenticates with must be linked to the specified YouTube content owner.",
+     "input": "on_behalf_of_content_owner",
+     "name": "onBehalfOfContentOwner",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    }
+   ],
+   "resource": "groups",
+   "scopes": [
+    "https://www.googleapis.com/auth/youtube",
+    "https://www.googleapis.com/auth/youtube.readonly",
+    "https://www.googleapis.com/auth/youtubepartner",
+    "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+    "https://www.googleapis.com/auth/yt-analytics.readonly"
+   ],
+   "title": "Delete analytics group",
+   "vendor_method_id": "youtubeAnalytics.groups.delete"
+  },
+  "get_analytics_group_items": {
+   "answer": "json",
+   "api": "analytics",
+   "area": "Groups",
+   "body": null,
+   "description": "Reads the items of a YouTube Analytics group. YouTube: Returns a collection of group items that match the API request parameters. Calls youtubeAnalytics.groupItems.list (GET /v2/groupItems) of the YouTube Analytics API. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "kind": "read",
+   "method": "GET",
+   "pager": null,
+   "path": "/v2/groupItems",
+   "path_params": [],
+   "query": [
+    {
+     "description": "The groupId parameter specifies the unique ID of the group for which you want to retrieve group items.",
+     "input": "group_id",
+     "name": "groupId",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    },
+    {
+     "description": "This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners that own and manage many different YouTube channels. The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube user who is acting on behalf of the content owner specified in the parameter value. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The account that the user authenticates with must be linked to the specified YouTube content owner.",
+     "input": "on_behalf_of_content_owner",
+     "name": "onBehalfOfContentOwner",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    }
+   ],
+   "resource": "groupItems",
+   "scopes": [
+    "https://www.googleapis.com/auth/youtube",
+    "https://www.googleapis.com/auth/youtube.readonly",
+    "https://www.googleapis.com/auth/youtubepartner",
+    "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+    "https://www.googleapis.com/auth/yt-analytics.readonly"
+   ],
+   "title": "Get analytics group items",
+   "vendor_method_id": "youtubeAnalytics.groupItems.list"
+  },
+  "get_analytics_groups": {
+   "answer": "json",
+   "api": "analytics",
+   "area": "Groups",
+   "body": null,
+   "description": "Reads YouTube Analytics groups by ID or of the connected account. YouTube: Returns a collection of groups that match the API request parameters. For example, you can retrieve all groups that the authenticated user owns, or you can retrieve one or more groups by their unique IDs. Calls youtubeAnalytics.groups.list (GET /v2/groups) of the YouTube Analytics API. Returns one page in items with next_page_token; with all_pages it reads every page, up to max_items. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "kind": "read",
+   "method": "GET",
+   "pager": {
+    "max": null,
+    "min": 1,
+    "size": null,
+    "size_input": null,
+    "token": "pageToken",
+    "token_input": "page_token"
+   },
+   "path": "/v2/groups",
+   "path_params": [],
+   "query": [
+    {
+     "description": "The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken property identifies the next page that can be retrieved.",
+     "input": "page_token",
+     "name": "pageToken",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    },
+    {
+     "description": "This parameter can only be used in a properly authorized request. Set this parameter's value to true to retrieve all groups owned by the authenticated user.",
+     "input": "mine",
+     "name": "mine",
+     "node": {
+      "kind": "boolean",
+      "required": false
+     }
+    },
+    {
+     "description": "The id parameter specifies a comma-separated list of the YouTube group ID(s) for the resource(s) that are being retrieved. Each group must be owned by the authenticated user. In a group resource, the id property specifies the group's YouTube group ID. Note that if you do not specify a value for the id parameter, then you must set the mine parameter to true.",
+     "input": "id",
+     "name": "id",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    },
+    {
+     "description": "This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners that own and manage many different YouTube channels. The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube user who is acting on behalf of the content owner specified in the parameter value. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The account that the user authenticates with must be linked to the specified YouTube content owner.",
+     "input": "on_behalf_of_content_owner",
+     "name": "onBehalfOfContentOwner",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    }
+   ],
+   "resource": "groups",
+   "scopes": [
+    "https://www.googleapis.com/auth/youtube",
+    "https://www.googleapis.com/auth/youtube.readonly",
+    "https://www.googleapis.com/auth/youtubepartner",
+    "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+    "https://www.googleapis.com/auth/yt-analytics.readonly"
+   ],
+   "title": "Get analytics groups",
+   "vendor_method_id": "youtubeAnalytics.groups.list"
+  },
+  "query_analytics_report": {
+   "answer": "json",
+   "api": "analytics",
+   "area": "Reports",
+   "body": null,
+   "description": "Reads a YouTube Analytics report: metrics by dimensions for a channel or content owner over a date range. YouTube: Retrieve your YouTube Analytics reports. Calls youtubeAnalytics.reports.query (GET /v2/reports) of the YouTube Analytics API. Sent as given: Get channel report, Get video report and Get top videos check the combination against YouTube's report tables first. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "kind": "read",
+   "method": "GET",
+   "pager": null,
+   "path": "/v2/reports",
+   "path_params": [],
+   "query": [
+    {
+     "description": "A list of filters that should be applied when retrieving YouTube Analytics data. The Available Reports document identifies the dimensions that can be used to filter each report, and the Dimensions document defines those dimensions. If a request uses multiple filters, join them together with a semicolon (;), and the returned result table will satisfy both filters. For example, a filters parameter value of video==dMH0bHeiRNg;country==IT restricts the result set to include data for the given video in Italy.",
+     "input": "filters",
+     "name": "filters",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    },
+    {
+     "description": "The currency to which financial metrics should be converted. The default is US Dollar (USD). If the result contains no financial metrics, this flag will be ignored. Responds with an error if the specified currency is not recognized.",
+     "input": "currency",
+     "name": "currency",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    },
+    {
+     "description": "The maximum number of rows to include in the response.",
+     "input": "max_results",
+     "name": "maxResults",
+     "node": {
+      "kind": "integer",
+      "minimum": 1,
+      "required": false
+     }
+    },
+    {
+     "description": "A comma-separated list of YouTube Analytics dimensions, such as views or ageGroup,gender. See the Available Reports document for a list of the reports that you can retrieve and the dimensions used for those reports. Also see the Dimensions document for definitions of those dimensions.",
+     "input": "dimensions",
+     "name": "dimensions",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    },
+    {
+     "description": "A comma-separated list of dimensions or metrics that determine the sort order for YouTube Analytics data. By default the sort order is ascending. The '-' prefix causes descending sort order.",
+     "input": "sort",
+     "name": "sort",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    },
+    {
+     "description": "The start date for fetching YouTube Analytics data. The value should be in YYYY-MM-DD format.",
+     "input": "start_date",
+     "name": "startDate",
+     "node": {
+      "format": "date",
+      "kind": "text",
+      "max_length": 2000,
+      "required": true
+     }
+    },
+    {
+     "description": "Identifies the YouTube channel or content owner for which you are retrieving YouTube Analytics data. - To request data for a YouTube user, set the ids parameter value to channel==CHANNEL_ID, where CHANNEL_ID specifies the unique YouTube channel ID. - To request data for a YouTube CMS content owner, set the ids parameter value to contentOwner==OWNER_NAME, where OWNER_NAME is the CMS name of the content owner.",
+     "input": "ids",
+     "name": "ids",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": true
+     }
+    },
+    {
+     "description": "The end date for fetching YouTube Analytics data. The value should be in YYYY-MM-DD format.",
+     "input": "end_date",
+     "name": "endDate",
+     "node": {
+      "format": "date",
+      "kind": "text",
+      "max_length": 2000,
+      "required": true
+     }
+    },
+    {
+     "description": "If set to true historical data (i.e. channel data from before the linking of the channel to the content owner) will be retrieved.",
+     "input": "include_historical_channel_data",
+     "name": "includeHistoricalChannelData",
+     "node": {
+      "kind": "boolean",
+      "required": false
+     }
+    },
+    {
+     "description": "An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter (one-based, inclusive).",
+     "input": "start_index",
+     "name": "startIndex",
+     "node": {
+      "kind": "integer",
+      "minimum": 1,
+      "required": false
+     }
+    },
+    {
+     "description": "A comma-separated list of YouTube Analytics metrics, such as views or likes,dislikes. See the Available Reports document for a list of the reports that you can retrieve and the metrics available in each report, and see the Metrics document for definitions of those metrics.",
+     "input": "metrics",
+     "name": "metrics",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": true
+     }
+    }
+   ],
+   "resource": "reports",
+   "scopes": [
+    "https://www.googleapis.com/auth/youtube",
+    "https://www.googleapis.com/auth/youtube.readonly",
+    "https://www.googleapis.com/auth/youtubepartner",
+    "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+    "https://www.googleapis.com/auth/yt-analytics.readonly"
+   ],
+   "title": "Query analytics report",
+   "vendor_method_id": "youtubeAnalytics.reports.query"
+  },
+  "remove_analytics_group_item": {
+   "answer": "json",
+   "api": "analytics",
+   "area": "Groups",
+   "body": null,
+   "description": "Removes an item from a YouTube Analytics group. YouTube: Removes an item from a group. Calls youtubeAnalytics.groupItems.delete (DELETE /v2/groupItems) of the YouTube Analytics API. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "kind": "write",
+   "method": "DELETE",
+   "pager": null,
+   "path": "/v2/groupItems",
+   "path_params": [],
+   "processing": {
+    "accepted_always": false,
+    "check": null
+   },
+   "query": [
+    {
+     "description": "The id parameter specifies the YouTube group item ID of the group item that is being deleted.",
+     "input": "id",
+     "name": "id",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    },
+    {
+     "description": "This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners that own and manage many different YouTube channels. The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube user who is acting on behalf of the content owner specified in the parameter value. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The account that the user authenticates with must be linked to the specified YouTube content owner.",
+     "input": "on_behalf_of_content_owner",
+     "name": "onBehalfOfContentOwner",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    }
+   ],
+   "resource": "groupItems",
+   "scopes": [
+    "https://www.googleapis.com/auth/youtube",
+    "https://www.googleapis.com/auth/youtube.readonly",
+    "https://www.googleapis.com/auth/youtubepartner",
+    "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+    "https://www.googleapis.com/auth/yt-analytics.readonly"
+   ],
+   "title": "Remove analytics group item",
+   "vendor_method_id": "youtubeAnalytics.groupItems.delete"
+  },
+  "update_analytics_group": {
+   "answer": "json",
+   "api": "analytics",
+   "area": "Groups",
+   "body": {
+    "json": {
+     "properties": [
+      "contentDetails",
+      "errors",
+      "etag",
+      "id",
+      "kind",
+      "snippet"
+     ],
+     "schema": "Group"
+    },
+    "required": true
+   },
+   "description": "Changes a YouTube Analytics group, for example its title. YouTube: Modifies a group. For example, you could change a group's title. Calls youtubeAnalytics.groups.update (PUT /v2/groups) of the YouTube Analytics API. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "kind": "write",
+   "method": "PUT",
+   "pager": null,
+   "path": "/v2/groups",
+   "path_params": [],
+   "processing": {
+    "accepted_always": false,
+    "check": null
+   },
+   "query": [
+    {
+     "description": "This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners that own and manage many different YouTube channels. The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube user who is acting on behalf of the content owner specified in the parameter value. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The account that the user authenticates with must be linked to the specified YouTube content owner.",
+     "input": "on_behalf_of_content_owner",
+     "name": "onBehalfOfContentOwner",
+     "node": {
+      "kind": "text",
+      "max_length": 2000,
+      "required": false
+     }
+    }
+   ],
+   "resource": "groups",
+   "scopes": [
+    "https://www.googleapis.com/auth/youtube",
+    "https://www.googleapis.com/auth/youtube.readonly",
+    "https://www.googleapis.com/auth/youtubepartner",
+    "https://www.googleapis.com/auth/yt-analytics-monetary.readonly",
+    "https://www.googleapis.com/auth/yt-analytics.readonly"
+   ],
+   "title": "Update analytics group",
+   "vendor_method_id": "youtubeAnalytics.groups.update"
+  }
+ },
+ "revenue_connection_types": [
+  "youtube_analytics_channel_monetary"
+ ],
+ "sources": {
+  "analytics": {
+   "bytes": 35631,
+   "downloaded": "2026-11-23",
+   "name": "youtubeAnalytics",
+   "revision": "20261122",
+   "root_url": "https://youtubeanalytics.googleapis.com/",
+   "sha256": "5fcf9ab54b98f007f21905b55e2a0aaa33ab6a545e6cbedd0780785ba21760e6",
+   "url": "https://youtubeanalytics.googleapis.com/$discovery/rest?version=v2",
+   "version": "v2"
+  }
+ }
+}

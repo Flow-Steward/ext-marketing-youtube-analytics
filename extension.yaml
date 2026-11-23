@@ -1,0 +1,180 @@
+manifest_version: 2
+lifecycle:
+  data_schema_version: 1
+  data_migrations: []
+extension_id: flowsteward.youtube-analytics
+kind: tool_provider
+version: 0.1.0
+release_stage: active
+billing_mode: free
+display_name: YouTube Analytics
+description: 'Connect workflows to the YouTube Analytics API v2 of your YouTube channel.
+  Everyday steps read a channel report for a period with the metrics and dimensions
+  you choose, a report for one video and the top videos of a period, and list, create
+  and fill YouTube Analytics groups. Before a report is asked for, the combination
+  of dimensions, metrics and filters is checked against YouTube''s channel report
+  tables.
+
+
+  All 8 methods of the API have their own step, 15 steps in all. A connection is one
+  YouTube channel, authorized through your own Google Cloud OAuth client; revenue
+  metrics need a connection with revenue access.'
+vendor:
+  name: Flow Steward
+  support_url: https://github.com/Flow-Steward/ext-marketing-youtube-analytics/issues
+  website_url: https://github.com/Flow-Steward/ext-marketing-youtube-analytics
+listing:
+  category: marketing
+  tags:
+  - youtube
+  - analytics
+  - reports
+  - views
+  - video
+  - revenue
+  summary: Read YouTube Analytics reports for your channel and videos, find your top
+    videos and manage analytics groups.
+  categories:
+  - marketing
+  - data
+  setup_summary: Create a Web application OAuth client in Google Cloud with the YouTube
+    Analytics API enabled, enter its Client ID and Client Secret on the Connection
+    page, connect the channel and run the connection test.
+features:
+- tool
+- action
+required_scopes:
+- extension:invoke
+- artifact:write
+machine_auth:
+  service_account_key: svc_ext_youtube_analytics
+  required_scopes:
+  - extension:invoke
+  - artifact:write
+account_scope:
+  scope_type: project
+  description: Each authorized YouTube channel is a project connection; a project
+    may hold several.
+egress:
+  hosts:
+  - youtubeanalytics.googleapis.com
+callbacks:
+- callback_id: oauth_authorization
+  purpose: oauth_authorization
+  methods:
+  - GET
+  connection_scoped: false
+external_effects:
+- operation_id: create_group
+  effect_kind: youtube_analytics_create_group
+  channel: youtube_analytics_api
+  idempotency: required
+  test_mode_behavior: suppress
+- operation_id: add_video_to_group
+  effect_kind: youtube_analytics_add_video_to_group
+  channel: youtube_analytics_api
+  idempotency: required
+  test_mode_behavior: suppress
+- operation_id: create_analytics_group
+  effect_kind: youtube_analytics_create_analytics_group
+  channel: youtube_analytics_api
+  idempotency: required
+  test_mode_behavior: suppress
+- operation_id: update_analytics_group
+  effect_kind: youtube_analytics_update_analytics_group
+  channel: youtube_analytics_api
+  idempotency: required
+  test_mode_behavior: suppress
+- operation_id: delete_analytics_group
+  effect_kind: youtube_analytics_delete_analytics_group
+  channel: youtube_analytics_api
+  idempotency: required
+  test_mode_behavior: suppress
+- operation_id: add_analytics_group_item
+  effect_kind: youtube_analytics_add_analytics_group_item
+  channel: youtube_analytics_api
+  idempotency: required
+  test_mode_behavior: suppress
+- operation_id: remove_analytics_group_item
+  effect_kind: youtube_analytics_remove_analytics_group_item
+  channel: youtube_analytics_api
+  idempotency: required
+  test_mode_behavior: suppress
+runtime:
+  contract_version: extension_host_v2
+  extension_contract_v2:
+    oauth_providers:
+    - provider_id: google_youtube
+      display_name: YouTube (Google)
+      description: Sign in with the Google account of the YouTube channel and allow
+        your Google Cloud OAuth client to read its YouTube Analytics.
+      setup_page_id: connection
+      help_page_id: connection
+      error_help_anchors:
+        invalid_client: client-credentials
+        authorization_required: authorize-again
+        provider_unavailable: google-api-setup
+      flow:
+        type: authorization_code
+        pkce: s256
+      credential_fields:
+      - field_id: client_id
+        value_type: text
+        required: true
+        secret: false
+        change_policy: reauthorization_required
+        label: Google OAuth Client ID
+        help_text: The Client ID of your Web application OAuth client in Google Cloud.
+        autocomplete: 'off'
+        validation:
+          min_length: 1
+          max_length: 512
+      - field_id: client_secret
+        value_type: secret
+        required: true
+        secret: true
+        change_policy: runtime_revalidate
+        label: Google OAuth Client Secret
+        help_text: The Client Secret of the same OAuth client.
+        autocomplete: 'off'
+        validation:
+          min_length: 1
+          max_length: 4096
+      authorization_endpoint:
+        url: https://accounts.google.com/o/oauth2/v2/auth
+      token_endpoint:
+        url: https://oauth2.googleapis.com/token
+        client_auth_method: client_secret_post
+      revocation_endpoint:
+        url: https://oauth2.googleapis.com/revoke
+      callback_id: oauth_authorization
+      authorization_intents:
+      - intent_id: connect
+        static_parameters:
+          access_type: offline
+          include_granted_scopes: false
+          prompt: consent select_account
+        user_inputs:
+        - input_id: email_hint
+          parameter: login_hint
+          validation:
+            type: email
+            max_length: 320
+    connection_types: contracts/connection_types.yaml
+    operation_manifest: contracts/operation_manifest.yaml
+    step_ui_manifest: contracts/step_ui_manifest.yaml
+    artifact_policies: contracts/artifact_policies.yaml
+entrypoint:
+  mode: subprocess
+  command:
+  - python3
+  - main.py
+  timeout_seconds: 600
+health:
+  command:
+  - python3
+  - health.py
+  timeout_seconds: 5
+ui_manifest: ui/ui_manifest.yaml
+action_manifest: ui/actions/actions.yaml
+python_requirements: []

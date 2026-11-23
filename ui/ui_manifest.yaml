@@ -1,0 +1,11 @@
+version: '1'
+pages:
+- ref: pages/setup-guide.yaml
+- ref: pages/connection.yaml
+- ref: pages/youtube-analytics-api.yaml
+- ref: pages/youtube-analytics-api-reports.yaml
+- ref: pages/youtube-analytics-api-groups.yaml
+- ref: pages/report-tables.yaml
+- ref: pages/coverage.yaml
+- ref: pages/changelog.yaml
+- ref: pages/support.yaml

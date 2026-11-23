@@ -1,0 +1,34 @@
+page_id: setup-guide
+title: Setup Guide
+description: Connect a YouTube channel's analytics in a few minutes.
+components:
+  - component_id: setup_steps
+    type: markdown
+    title: Connect YouTube Analytics
+    body: |
+      1. **Create or choose a Google Cloud project** at [console.cloud.google.com](https://console.cloud.google.com).
+      2. **Enable the API.** In the API Library enable **YouTube Analytics API**.
+      3. **Configure the OAuth consent screen** of the project. Whether the app must be verified by Google, and who may sign in while it is in testing, follows Google's policies for the scopes it asks for.
+      4. **Create an OAuth client** of the type **Web application** and add the OAuth Redirect URI shown on the **Connection** page as an authorized redirect URI, exactly as shown.
+      5. **Copy the Client ID and Client Secret** of that client into **Connection** and save them.
+      6. Choose a connection type, press **Connect**, sign in with the Google account of the channel, choose the channel and allow the access. Then press **Test connection**.
+      7. Add YouTube Analytics steps to a workflow. Start with **Test connection**, **Get channel report** or **Get top videos**.
+
+      [Google: OAuth 2.0 for web server applications](https://developers.google.com/identity/protocols/oauth2/web-server)
+
+      [YouTube Analytics API: channel reports](https://developers.google.com/youtube/analytics/channel_reports)
+  - component_id: setup_types
+    type: markdown
+    title: Which connection type
+    body: |
+      - **YouTube channel analytics** asks for `yt-analytics.readonly`: analytics reports of the channel and its YouTube Analytics groups.
+      - **YouTube channel analytics with revenue** also asks for `yt-analytics-monetary.readonly`: revenue and ad performance metrics. YouTube gives them only for channels in the YouTube Partner Program.
+
+      The same Google OAuth client can serve the YouTube extension and this one.
+  - component_id: setup_reports
+    type: markdown
+    title: Choosing metrics and dimensions
+    body: |
+      YouTube supports only some combinations of dimensions, metrics and filters. The report steps check a request against YouTube's report tables before they send it and say what is missing, for example a sort or at most 25 rows. The **Report tables** page lists every allowed combination.
+
+      A **test run** of a workflow never sends changes.
