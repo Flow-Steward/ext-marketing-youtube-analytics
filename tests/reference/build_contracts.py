@@ -37,7 +37,7 @@ import names  # noqa: E402
 
 STEP_IDS = HERE / "step_ids.json"
 CHANNEL_REPORTS = HERE / "channel_reports.json"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 EXTENSION_ID = "flowsteward.youtube-analytics"
 REPOSITORY = "https://github.com/Flow-Steward/ext-marketing-youtube-analytics"
 HEADER = (

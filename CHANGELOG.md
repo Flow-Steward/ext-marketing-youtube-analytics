@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 — 2026-11-24
+
+- The tests check the install folder from the extension id, not the checkout folder, so they pass in the repository's own checkout (v0.1.0 was tagged, but its release did not build).
+
 ## 0.1.0 — 2026-11-23
 
 First release, built on the Discovery document of the YouTube Analytics API v2 (revision 20261122, SHA-256 `5fcf9ab54b98f007f21905b55e2a0aaa33ab6a545e6cbedd0780785ba21760e6`) and the report tables of YouTube's channel reports page (updated 2026-11-12), downloaded 2026-11-23.
