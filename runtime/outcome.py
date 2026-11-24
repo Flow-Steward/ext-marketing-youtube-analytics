@@ -23,7 +23,10 @@ and the step's class; the first rule that applies decides:
   list per record, do not occur in the YouTube Analytics API: the status confirms every
   write. Add video to group answers HTTP 204 for a video already in the group, as
   groupItems.insert documents; that step decides it before this table.)
-- T5. The body parsed, but a creation's answer does not carry the new id: as T4c.
+- T5. The body parsed and carries a non-empty ``errors`` (the Errors object of Group,
+  GroupItem and EmptyResponse: "The presence of an error field signals that the
+  operation has failed") although the status says success: ``timeout_unknown``.
+  The body parsed, but a creation's answer does not carry the new id: as T4c.
 - T6. Otherwise success: ``processing``, ``applied``, ``check`` as the method says.
 
 An empty body is not a parsed body: a write of class OTHER takes it as success without
@@ -38,7 +41,7 @@ from typing import Any
 from . import errors
 from .errors import ExtensionError
 from .nesting import MAX_ANSWER_DEPTH
-from .transport import CHECK, Answer, TooDeep, unknown
+from .transport import CHECK, Answer, TooDeep, dumps_json, unknown
 
 OTHER = "other"
 CREATE = "create"
@@ -112,6 +115,17 @@ def write_outcome(
             raise _created(shown, status, said, what)
         out["warnings"].append(said + "; it is not returned (data is null)")
         return out
+    data = out["data"]
+    if (entry or {}).get("fails_with_errors") and isinstance(data, Mapping) and data.get("errors"):
+        # The Errors object: "The presence of an error field signals that the operation
+        # has failed", yet the status said it succeeded: the outcome is not known.
+        detail = errors.safe_text(dumps_json(context.transport.scrub(data["errors"])), 400)
+        raise unknown(
+            f"YouTube Analytics answered {shown} with HTTP {status} and errors ({detail}), "
+            "so the outcome is not known" + CHECK,
+            errors.TIMEOUT_UNKNOWN,
+            status,
+        )
     if step == CREATE:  # T5
         found = find_id(out["data"]) if find_id is not None and parsed else None
         if found is None:

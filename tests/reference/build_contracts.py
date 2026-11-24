@@ -54,6 +54,17 @@ SOURCES: dict[str, dict[str, Any]] = {
         "downloaded": "2026-11-23",
     },
 }
+#: The answers whose ``errors`` field (schema Errors) says the operation failed.
+ERRORS_ANSWERS = frozenset(
+    {
+        "QueryResponse",
+        "Group",
+        "GroupItem",
+        "EmptyResponse",
+        "ListGroupsResponse",
+        "ListGroupItemsResponse",
+    }
+)
 #: Products the source does not cover, with the reason.
 EXCLUDED_PRODUCTS = {
     "YouTube Reporting API": (
@@ -374,8 +385,10 @@ def registry_entry(api: str, m: dict[str, Any], ids: dict[str, str]) -> dict[str
         "kind": kind,
         "scopes": sorted(m.get("scopes", [])),
         "answer": answer_of(m),
-        # QueryResponse.errors: "When set, indicates that the operation failed."
-        "fails_with_errors": (m.get("response") or {}).get("$ref") == "QueryResponse",
+        # QueryResponse.errors: "When set, indicates that the operation failed."; the
+        # group answers carry the same Errors object ("The presence of an error field
+        # signals that the operation has failed").
+        "fails_with_errors": (m.get("response") or {}).get("$ref") in ERRORS_ANSWERS,
         "path_params": path_params,
         "query": query,
         "body": body,

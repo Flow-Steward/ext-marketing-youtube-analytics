@@ -182,7 +182,7 @@ def read_all(context: Context, operation_id: str, plan: Any) -> dict[str, Any]:
         call = generic.to_call(entry, _with_query(plan, page_query))
         answer = context.transport.read(call)
         last["status"] = answer.status
-        return generic._read_json(context, answer, plan.shown)
+        return generic._read_json(context, answer, plan.shown, entry)
 
     result = collect(
         context,

@@ -297,6 +297,60 @@ def test_a_report_with_errors_at_http_200_is_an_upstream_failure() -> None:
     assert "r1" in result["error"]
 
 
-def test_only_the_report_step_reads_errors_as_a_failure() -> None:
+def test_every_step_whose_answer_carries_errors_is_marked() -> None:
     marked = {oid for oid, entry in REGISTRY.items() if entry["fails_with_errors"]}
-    assert marked == {"query_analytics_report"}
+    assert marked == set(REGISTRY)
+
+
+GROUP_ERRORS = {"errors": {"requestId": "r9", "error": [{"code": "x", "domain": "d"}]}}
+
+
+@pytest.mark.parametrize(
+    ("operation_id", "given"),
+    [
+        ("get_analytics_groups", {"mine": True}),
+        ("get_analytics_groups", {"mine": True, "all_pages": True}),
+        ("get_analytics_group_items", {"group_id": "G1"}),
+    ],
+)
+def test_a_group_read_with_errors_at_http_200_is_an_upstream_failure(
+    operation_id: str, given: dict[str, Any]
+) -> None:
+    fake = FakeYouTube(ok({"items": [], **GROUP_ERRORS}))
+    result = run(operation_id, given, fake)
+    assert result["ok"] is False, result
+    assert result["error_code"] == "upstream_failure"
+    assert result["definitely_no_external_effect"] is True
+    assert "r9" in result["error"]
+
+
+@pytest.mark.parametrize(
+    ("operation_id", "given"),
+    [
+        ("create_analytics_group", {"body": {"snippet": {"title": "T"}}}),
+        ("update_analytics_group", {"body": {"id": "G1", "snippet": {"title": "T"}}}),
+        ("delete_analytics_group", {"id": "G1"}),
+        (
+            "add_analytics_group_item",
+            {"body": {"groupId": "G1", "resource": {"kind": "youtube#video", "id": "v1"}}},
+        ),
+        ("remove_analytics_group_item", {"id": "I1"}),
+        ("create_group", {"title": "T"}),
+    ],
+)
+def test_a_group_write_with_errors_at_http_200_has_an_unknown_outcome(
+    operation_id: str, given: dict[str, Any]
+) -> None:
+    fake = FakeYouTube(ok({"id": "G1", **GROUP_ERRORS}))
+    result = run(operation_id, given, fake)
+    assert result["ok"] is False, result
+    assert result["error_code"] == "timeout_unknown"
+    assert result["external_effect_status"] == "timeout_unknown"
+    assert result["definitely_no_external_effect"] is False
+    assert "outcome is not known" in result["error"]
+
+
+def test_a_group_write_without_errors_still_succeeds() -> None:
+    fake = FakeYouTube(ok({"id": "G1", "snippet": {"title": "T"}}))
+    result = run("update_analytics_group", {"body": {"id": "G1", "snippet": {"title": "T"}}}, fake)
+    assert result["ok"] is True, result

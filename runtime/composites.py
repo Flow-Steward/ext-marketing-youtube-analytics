@@ -82,7 +82,7 @@ def _read(context: Context, operation_id: str, given: Mapping[str, Any]) -> Any:
     entry = generic.spec(operation_id)
     plan = generic.prepare(operation_id, given)
     answer = context.transport.read(generic.to_call(entry, plan))
-    return generic._read_json(context, answer, plan.shown)
+    return generic._read_json(context, answer, plan.shown, entry)
 
 
 def _ident(value: Any, name: str) -> str:
