@@ -10,3 +10,5 @@ First release, built on the Discovery document of the YouTube Analytics API v2 (
 - Connections are YouTube channels authorized through your own Google Cloud OAuth client; Flow Steward keeps and renews the authorization. Revenue metrics have their own connection type.
 - Long reports can be saved as a JSON workflow file. Report numbers are exact decimals.
 - Changes are sent once and never retried automatically; test runs never send them.
+- An answer cut off before its end (fewer bytes than Content-Length, or a chunked answer that stops early) is never taken for a whole one: a read fails with `invalid_response`, a change YouTube confirmed returns without data and with a warning, a group creation says it was made but its id is not known. An empty answer where JSON is documented is `invalid_response`.
+- A report YouTube answers with `errors` set, even with HTTP 200, fails with `upstream_failure`, in the Query report step as in the everyday report steps.

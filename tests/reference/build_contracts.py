@@ -374,6 +374,8 @@ def registry_entry(api: str, m: dict[str, Any], ids: dict[str, str]) -> dict[str
         "kind": kind,
         "scopes": sorted(m.get("scopes", [])),
         "answer": answer_of(m),
+        # QueryResponse.errors: "When set, indicates that the operation failed."
+        "fails_with_errors": (m.get("response") or {}).get("$ref") == "QueryResponse",
         "path_params": path_params,
         "query": query,
         "body": body,

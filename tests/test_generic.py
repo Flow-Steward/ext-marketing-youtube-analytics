@@ -284,3 +284,19 @@ def test_query_strings_are_url_encoded() -> None:
     fake = FakeYouTube(ok({"columnHeaders": [], "rows": []}))
     run("query_analytics_report", {**REPORT_INPUT, "filters": "video==a,b;country==US"}, fake)
     assert ("filters", "video==a,b;country==US") in parse_qsl(fake.calls[0].url.split("?", 1)[1])
+
+
+def test_a_report_with_errors_at_http_200_is_an_upstream_failure() -> None:
+    """QueryResponse.errors: "When set, indicates that the operation failed."."""
+    failed = {"errors": {"requestId": "r1", "error": [{"code": "x", "domain": "d"}]}}
+    fake = FakeYouTube(ok({"columnHeaders": [], "rows": [], **failed}))
+    result = run("query_analytics_report", REPORT_INPUT, fake)
+    assert result["ok"] is False
+    assert result["error_code"] == "upstream_failure"
+    assert result["definitely_no_external_effect"] is True
+    assert "r1" in result["error"]
+
+
+def test_only_the_report_step_reads_errors_as_a_failure() -> None:
+    marked = {oid for oid, entry in REGISTRY.items() if entry["fails_with_errors"]}
+    assert marked == {"query_analytics_report"}

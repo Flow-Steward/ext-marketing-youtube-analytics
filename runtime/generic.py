@@ -167,8 +167,14 @@ def to_call(entry: Mapping[str, Any], plan: Plan) -> Call:
 
 
 def _read_json(context: Context, answer: Answer, shown: str) -> Any:
+    """A read's JSON value; an empty or invalid answer is an error (nothing changed)."""
     if answer.empty:
-        return None
+        raise errors.no_effect(
+            errors.INVALID_RESPONSE,
+            f"YouTube answered {shown} without a body",
+            failure_class="provider",
+            retryable=False,
+        )
     try:
         return context.transport.json(answer)
     except ValueError as exc:
@@ -185,12 +191,29 @@ def _read_json(context: Context, answer: Answer, shown: str) -> Any:
         ) from None
 
 
+def refuse_failed_report(context: Context, data: Any, shown: str) -> None:
+    """A report answer whose ``errors`` is set failed, whatever its HTTP status: the
+    Discovery document says of QueryResponse.errors "When set, indicates that the
+    operation failed." A read changed nothing."""
+    failed = data.get("errors") if isinstance(data, Mapping) else None
+    if failed:
+        detail = errors.safe_text(dumps_json(context.transport.scrub(failed)), 400)
+        raise errors.no_effect(
+            errors.UPSTREAM_FAILURE,
+            f"YouTube Analytics answered {shown} with errors: {detail}",
+            failure_class="provider",
+            retryable=False,
+        )
+
+
 def read_result(
     context: Context, entry: Mapping[str, Any], answer: Answer, plan: Plan
 ) -> dict[str, Any]:
     """The outputs of a read YouTube answered with a success status."""
     result: dict[str, Any] = {"status": answer.status}
     data = _read_json(context, answer, plan.shown)
+    if entry.get("fails_with_errors"):
+        refuse_failed_report(context, data, plan.shown)
     if entry["pager"]:
         result.update(pages.one_page(data, plan.shown))
     else:

@@ -236,16 +236,7 @@ def _table(context: Context, data: Any) -> tuple[list[Any], list[Any]]:
     """The column headers and rows of a report answer."""
     if not isinstance(data, Mapping):
         raise pages.bad(REPORT_SHOWN, "is not a JSON object")
-    failed = data.get("errors")
-    if failed:
-        # QueryResponse.errors: "When set, indicates that the operation failed."
-        detail = errors.safe_text(dumps_json(context.transport.scrub(failed)), 400)
-        raise errors.no_effect(
-            errors.UPSTREAM_FAILURE,
-            f"YouTube Analytics answered {REPORT_SHOWN} with errors: {detail}",
-            failure_class="provider",
-            retryable=False,
-        )
+    generic.refuse_failed_report(context, data, REPORT_SHOWN)
     headers = data.get("columnHeaders", [])
     rows = data.get("rows", [])
     if headers is None:
