@@ -45,11 +45,15 @@ from .connection import HOSTS, Connection
 from .errors import ExtensionError
 
 DEFAULT_TIMEOUT_SECONDS = 120.0
-MAX_REQUEST_BODY_BYTES = 20 * 1024 * 1024
+#: The largest request body sent (our bound).
+MAX_REQUEST_BODY_BYTES = 20 * errors.MIB
 #: The most read from a JSON answer.
-MAX_ANSWER_BYTES = 30 * 1024 * 1024
+MAX_ANSWER_BYTES = 30 * errors.MIB
 MAX_ERROR_BODY_BYTES = 64 * 1024
 CHUNK_BYTES = 64 * 1024
+#: Error reasons a refusal names, and errors whose details it shows (our decision).
+MAX_REASONS = 5
+MAX_DETAILED_ERRORS = 3
 #: Shortest window still worth starting a request in.
 MIN_CALL_WINDOW_SECONDS = 15.0
 _USER_AGENT = "FlowSteward-YouTube-Analytics/0.1"
@@ -198,7 +202,9 @@ class YouTubeTransport:
             headers[name] = value
         if call.body is not None:
             if len(call.body) > MAX_REQUEST_BODY_BYTES:
-                raise errors.invalid("The request is larger than the 20 MB this extension sends")
+                raise errors.invalid(
+                    f"The request is larger than the {errors.size_text(MAX_REQUEST_BODY_BYTES)} this extension sends"
+                )
             headers["Content-Type"] = call.content_type or "application/json"
         url = self._connection.base_url(call.api) + call.path
         if call.query:
@@ -271,7 +277,7 @@ class YouTubeTransport:
                     if confirmed is None:
                         raise
                     confirmed.unread = (
-                        f"is larger than the {call.limit // (1024 * 1024)} MB this extension reads"
+                        f"is larger than the {errors.size_text(call.limit)} this extension reads"
                         if exc.code == errors.RESPONSE_TOO_LARGE
                         else "did not arrive in time"
                     )
@@ -372,10 +378,10 @@ class YouTubeTransport:
         items = error.get("errors") if error is not None else None
         out: list[str] = []
         if isinstance(items, list):
-            for item in items[:5]:
+            for item in items[:MAX_REASONS]:
                 reason = item.get("reason") if isinstance(item, Mapping) else None
                 if isinstance(reason, str) and reason.strip():
-                    out.append(errors.safe_text(self.scrub(reason), 80))
+                    out.append(errors.safe_text(self.scrub(reason), errors.REASON_TEXT))
         return out
 
     def detail(self, raw: bytes) -> str:
@@ -384,25 +390,29 @@ class YouTubeTransport:
             data = self.scrub(parse_json(raw))
         except ValueError:
             text = re.sub(r"<[^>]+>", " ", raw.decode("utf-8", "replace"))
-            return errors.safe_text(self.scrub(text), 200)
+            return errors.safe_text(self.scrub(text), errors.NAME_TEXT)
         if not isinstance(data, Mapping):
-            return errors.safe_text(data, 200)
+            return errors.safe_text(data, errors.NAME_TEXT)
         error = data.get("error")
         parts: list[str] = []
         if isinstance(error, Mapping):
             message = error.get("message")
             if isinstance(message, str) and message.strip():
-                parts.append(errors.safe_text(message, 400))
+                parts.append(errors.safe_text(message, errors.MESSAGE_TEXT))
             items = error.get("errors")
             if isinstance(items, list):
-                for item in items[:3]:
+                for item in items[:MAX_DETAILED_ERRORS]:
                     if not isinstance(item, Mapping):
                         continue
                     reason = item.get("reason")
                     where = item.get("location")
-                    text = errors.safe_text(reason, 80) if isinstance(reason, str) else ""
+                    text = (
+                        errors.safe_text(reason, errors.REASON_TEXT)
+                        if isinstance(reason, str)
+                        else ""
+                    )
                     if isinstance(where, str) and where.strip():
-                        text += f" (at {errors.safe_text(where, 100)})"
+                        text += f" (at {errors.safe_text(where, errors.ID_TEXT)})"
                     if text:
                         parts.append(text)
         elif isinstance(error, str) and error.strip():
@@ -410,7 +420,7 @@ class YouTubeTransport:
             description = data.get("error_description")
             if isinstance(description, str) and description.strip():
                 parts.append(description.strip())
-        return errors.safe_text("; ".join(parts), 900)
+        return errors.safe_text("; ".join(parts), errors.DETAIL_TEXT)
 
     def refusal(
         self,
@@ -527,7 +537,7 @@ def _kept_headers(headers: Any, scrub: Callable[[Any], Any]) -> dict[str, str]:
     for name in KEPT_HEADERS:
         value = headers.get(name)
         if isinstance(value, str) and value.strip():
-            kept[name] = errors.safe_text(scrub(value), 2000)
+            kept[name] = errors.safe_text(scrub(value), errors.HEADER_TEXT)
     return kept
 
 
@@ -633,7 +643,7 @@ def read_bounded(
                 )
             raise errors.no_effect(
                 errors.RESPONSE_TOO_LARGE,
-                f"YouTube's answer is larger than the {limit // (1024 * 1024)} MB this extension "
+                f"YouTube's answer is larger than the {errors.size_text(limit)} this extension "
                 "reads; narrow the request",
             )
     return bytes(buffer)

@@ -13,7 +13,7 @@ from .context import Context
 from .errors import ExtensionError
 
 ARTIFACT_TIMEOUT_SECONDS = 120.0
-MAX_DOWNLOAD_BYTES = 40 * 1024 * 1024
+MAX_DOWNLOAD_BYTES = 40 * errors.MIB
 
 #: Must match contracts/artifact_policies.yaml (tests/reference/build_contracts.py).
 DOWNLOAD_BINDING = "youtube_analytics_file"
@@ -22,7 +22,10 @@ DOWNLOAD_BINDING = "youtube_analytics_file"
 def save(context: Context, data: bytes, *, content_type: str, what: str) -> str:
     """Save ``data`` as a workflow file; its handle."""
     if len(data) > MAX_DOWNLOAD_BYTES:
-        raise errors.no_effect(errors.RESPONSE_TOO_LARGE, f"{what} is larger than 40 MiB")
+        raise errors.no_effect(
+            errors.RESPONSE_TOO_LARGE,
+            f"{what} is larger than {errors.size_text(MAX_DOWNLOAD_BYTES)}",
+        )
     try:
         written = context.artifact_writer(
             dict(context.payload),

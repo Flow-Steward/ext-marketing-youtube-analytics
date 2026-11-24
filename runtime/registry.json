@@ -3218,6 +3218,7 @@
     "required": true
    },
    "description": "Adds an item to a YouTube Analytics group. YouTube: Creates a group item. Calls youtubeAnalytics.groupItems.insert (POST /v2/groupItems) of the YouTube Analytics API. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "exactly_one": [],
    "fails_with_errors": true,
    "kind": "write",
    "method": "POST",
@@ -3270,6 +3271,7 @@
     "required": true
    },
    "description": "Creates a YouTube Analytics group of videos, playlists, channels or assets. YouTube: Creates a group. Calls youtubeAnalytics.groups.insert (POST /v2/groups) of the YouTube Analytics API. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "exactly_one": [],
    "fails_with_errors": true,
    "kind": "write",
    "method": "POST",
@@ -3309,6 +3311,7 @@
    "area": "Groups",
    "body": null,
    "description": "Deletes a YouTube Analytics group. YouTube: Deletes a group. Calls youtubeAnalytics.groups.delete (DELETE /v2/groups) of the YouTube Analytics API. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "exactly_one": [],
    "fails_with_errors": true,
    "kind": "write",
    "method": "DELETE",
@@ -3358,6 +3361,7 @@
    "area": "Groups",
    "body": null,
    "description": "Reads the items of a YouTube Analytics group. YouTube: Returns a collection of group items that match the API request parameters. Calls youtubeAnalytics.groupItems.list (GET /v2/groupItems) of the YouTube Analytics API. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "exactly_one": [],
    "fails_with_errors": true,
    "kind": "read",
    "method": "GET",
@@ -3403,6 +3407,12 @@
    "area": "Groups",
    "body": null,
    "description": "Reads YouTube Analytics groups by ID or of the connected account. YouTube: Returns a collection of groups that match the API request parameters. For example, you can retrieve all groups that the authenticated user owns, or you can retrieve one or more groups by their unique IDs. Calls youtubeAnalytics.groups.list (GET /v2/groups) of the YouTube Analytics API. Returns one page in items with next_page_token; with all_pages it reads every page, up to max_items. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "exactly_one": [
+    [
+     "id",
+     "mine"
+    ]
+   ],
    "fails_with_errors": true,
    "kind": "read",
    "method": "GET",
@@ -3474,6 +3484,7 @@
    "area": "Reports",
    "body": null,
    "description": "Reads a YouTube Analytics report: metrics by dimensions for a channel or content owner over a date range. YouTube: Retrieve your YouTube Analytics reports. Calls youtubeAnalytics.reports.query (GET /v2/reports) of the YouTube Analytics API. Sent as given: Get channel report, Get video report and Get top videos check the combination against YouTube's report tables first. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "exactly_one": [],
    "fails_with_errors": true,
    "kind": "read",
    "method": "GET",
@@ -3610,6 +3621,7 @@
    "area": "Groups",
    "body": null,
    "description": "Removes an item from a YouTube Analytics group. YouTube: Removes an item from a group. Calls youtubeAnalytics.groupItems.delete (DELETE /v2/groupItems) of the YouTube Analytics API. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "exactly_one": [],
    "fails_with_errors": true,
    "kind": "write",
    "method": "DELETE",
@@ -3672,6 +3684,7 @@
     "required": true
    },
    "description": "Changes a YouTube Analytics group, for example its title. YouTube: Modifies a group. For example, you could change a group's title. Calls youtubeAnalytics.groups.update (PUT /v2/groups) of the YouTube Analytics API. Google scopes: youtube, youtube.readonly, youtubepartner, yt-analytics-monetary.readonly, yt-analytics.readonly.",
+   "exactly_one": [],
    "fails_with_errors": true,
    "kind": "write",
    "method": "PUT",

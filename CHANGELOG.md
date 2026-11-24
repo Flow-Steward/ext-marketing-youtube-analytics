@@ -12,3 +12,5 @@ First release, built on the Discovery document of the YouTube Analytics API v2 (
 - Changes are sent once and never retried automatically; test runs never send them.
 - An answer cut off before its end (fewer bytes than Content-Length, or a chunked answer that stops early) is never taken for a whole one: a read fails with `invalid_response`, a change YouTube confirmed returns without data and with a warning, a group creation says it was made but its id is not known. An empty answer where JSON is documented is `invalid_response`.
 - An answer with `errors` set, even with HTTP 200, is a failure: a report or group read fails with `upstream_failure`; a group change has an unknown outcome (`timeout_unknown`).
+- A list never returns more records than asked for: groups.list has no page size, so the page that crosses the maximum is cut and the next run starts from `next_page_token` and `skip` (`next_skip`).
+- Get analytics groups takes exactly one of `id` or `mine` (true), checked before sending.

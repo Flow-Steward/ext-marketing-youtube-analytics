@@ -49,6 +49,24 @@ TOP_VIDEO_SORTS = [
 TOP_VIDEOS_MAX = 200
 TOP_VIDEOS_DEFAULT = 10
 MAX_TITLE = 1000
+#: A YouTube ID as this extension accepts it (channel IDs have 24 characters, video IDs
+#: 11; the bound leaves room without accepting arbitrary text).
+MAX_ID_LENGTH = 100
+#: A date written YYYY-MM-DD.
+DATE_LENGTH = 10
+#: An ISO 4217 currency code ("currency: ... ISO 4217 currency code", reports.query).
+CURRENCY_LENGTH = 3
+#: Metrics and dimensions a report step takes, and the length of each name (safety
+#: bounds; YouTube's channel report tables use at most a handful of dimensions).
+MAX_METRICS = 50
+MAX_DIMENSIONS = 10
+MAX_NAME_LENGTH = 100
+#: Filters and sort expressions as text (safety bounds).
+MAX_FILTERS_LENGTH = 2000
+MAX_SORT_LENGTH = 500
+#: Groups the "all my groups" step reads by default and at most (safety bounds).
+DEFAULT_MAX_GROUPS = 5000
+LARGEST_MAX_GROUPS = 50_000
 _ID_CHARS = frozenset("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_")
 _DAY = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 REPORT_SHOWN = "GET /v2/reports"
@@ -73,7 +91,9 @@ def _closed(given: Mapping[str, Any], allowed: set[str]) -> dict[str, Any]:
     rest = {k: v for k, v in given.items() if k != "connection_ref"}
     unknown = sorted(set(rest) - allowed)
     if unknown:
-        raise invalid(f"The step input has unknown fields: {', '.join(unknown[:10])}")
+        raise invalid(
+            f"The step input has unknown fields: {', '.join(unknown[: errors.LISTED_NAMES])}"
+        )
     return rest
 
 
@@ -86,8 +106,8 @@ def _read(context: Context, operation_id: str, given: Mapping[str, Any]) -> Any:
 
 
 def _ident(value: Any, name: str) -> str:
-    """A YouTube id: letters, digits, - and _ (at most 100)."""
-    result = text(value, name, max_length=100)
+    """A YouTube id: letters, digits, - and _ (at most MAX_ID_LENGTH)."""
+    result = text(value, name, max_length=MAX_ID_LENGTH)
     if any(ch not in _ID_CHARS for ch in result):
         raise invalid(f"{name} must be a YouTube ID (letters, digits, - and _)")
     return result
@@ -135,7 +155,7 @@ def _output_choice(given: Mapping[str, Any]) -> bool:
 
 
 def _day(given: Mapping[str, Any], name: str) -> date:
-    value = text(given.get(name), name, max_length=10)
+    value = text(given.get(name), name, max_length=DATE_LENGTH)
     if not _DAY.fullmatch(value):
         raise invalid(f"{name} must be a date written YYYY-MM-DD")
     try:
@@ -158,9 +178,9 @@ def _ids(given: Mapping[str, Any]) -> str:
 
 
 def _currency(given: Mapping[str, Any]) -> str | None:
-    currency = _opt_text(given, "currency", max_length=3)
+    currency = _opt_text(given, "currency", max_length=CURRENCY_LENGTH)
     if currency is not None and (
-        len(currency) != 3 or not currency.isalpha() or not currency.isupper()
+        len(currency) != CURRENCY_LENGTH or not currency.isalpha() or not currency.isupper()
     ):
         raise invalid("currency must be a three-letter code such as EUR")
     return currency
@@ -223,8 +243,10 @@ def verify_identity(context: Context) -> dict[str, Any]:
     snippet = item.get("snippet")
     title = snippet.get("title") if isinstance(snippet, Mapping) else None
     return {
-        "subject": errors.safe_text(item["id"], 100),
-        "verified_display_name": errors.safe_text(title, 200) if isinstance(title, str) else None,
+        "subject": errors.safe_text(item["id"], errors.ID_TEXT),
+        "verified_display_name": errors.safe_text(title, errors.NAME_TEXT)
+        if isinstance(title, str)
+        else None,
         "health": "ok",
     }
 
@@ -317,15 +339,15 @@ def _run_report(
 
 
 def _channel_plan(given: Mapping[str, Any], revenue: bool) -> tuple[dict[str, Any], list[str]]:
-    metrics = _list(given, "metrics", max_items=50, max_length=100)
+    metrics = _list(given, "metrics", max_items=MAX_METRICS, max_length=MAX_NAME_LENGTH)
     if not metrics:
         raise invalid("metrics is required: one or more YouTube Analytics metrics, such as views")
     return plan_report(
         given,
-        dimensions=_list(given, "dimensions", max_items=10, max_length=100),
+        dimensions=_list(given, "dimensions", max_items=MAX_DIMENSIONS, max_length=MAX_NAME_LENGTH),
         metrics=metrics,
-        filters=reports.parse_filters(_opt_text(given, "filters", max_length=2000)),
-        sort=reports.parse_sort(_opt_text(given, "sort", max_length=500)),
+        filters=reports.parse_filters(_opt_text(given, "filters", max_length=MAX_FILTERS_LENGTH)),
+        sort=reports.parse_sort(_opt_text(given, "sort", max_length=MAX_SORT_LENGTH)),
         max_results=_max_results(given),
         revenue=revenue,
     )
@@ -339,18 +361,18 @@ def get_channel_report(context: Context) -> dict[str, Any]:
 
 def _video_plan(given: Mapping[str, Any], revenue: bool) -> tuple[dict[str, Any], list[str]]:
     video = _ident(given.get("video_id"), "video_id")
-    metrics = _list(given, "metrics", max_items=50, max_length=100)
+    metrics = _list(given, "metrics", max_items=MAX_METRICS, max_length=MAX_NAME_LENGTH)
     if not metrics:
         raise invalid("metrics is required: one or more YouTube Analytics metrics, such as views")
-    more = reports.parse_filters(_opt_text(given, "filters", max_length=2000))
+    more = reports.parse_filters(_opt_text(given, "filters", max_length=MAX_FILTERS_LENGTH))
     if "video" in more or "group" in more:
         raise invalid("filters may not name video or group: video_id chooses the video")
     return plan_report(
         given,
-        dimensions=_list(given, "dimensions", max_items=10, max_length=100),
+        dimensions=_list(given, "dimensions", max_items=MAX_DIMENSIONS, max_length=MAX_NAME_LENGTH),
         metrics=metrics,
         filters={"video": [video], **more},
-        sort=reports.parse_sort(_opt_text(given, "sort", max_length=500)),
+        sort=reports.parse_sort(_opt_text(given, "sort", max_length=MAX_SORT_LENGTH)),
         max_results=_max_results(given),
         revenue=revenue,
     )
@@ -375,9 +397,11 @@ TOP_INPUTS = {
 
 
 def _top_plan(given: Mapping[str, Any], revenue: bool) -> tuple[dict[str, Any], list[str]]:
-    metrics = _list(given, "metrics", max_items=50, max_length=100) or list(TOP_VIDEO_METRICS)
+    metrics = _list(given, "metrics", max_items=MAX_METRICS, max_length=MAX_NAME_LENGTH) or list(
+        TOP_VIDEO_METRICS
+    )
     sort = _choice(given, "sort", TOP_VIDEO_SORTS, "-views")
-    more = reports.parse_filters(_opt_text(given, "filters", max_length=2000))
+    more = reports.parse_filters(_opt_text(given, "filters", max_length=MAX_FILTERS_LENGTH))
     if "video" in more or "group" in more:
         raise invalid("filters may not name video or group for the top videos")
     return plan_report(
@@ -403,7 +427,7 @@ def get_top_videos(context: Context) -> dict[str, Any]:
 
 
 def list_groups(context: Context) -> dict[str, Any]:
-    given = _closed(context.operation_input, {"max_groups", "page_token"})
+    given = _closed(context.operation_input, {"max_groups", "page_token", "skip"})
     entry = generic.spec("get_analytics_groups")
     pager = entry["pager"]
 
@@ -421,9 +445,12 @@ def list_groups(context: Context) -> dict[str, Any]:
         start=_opt_text(given, "page_token", max_length=pages.MAX_TOKEN),
         page_size=1,
         smallest=1,
-        most=_opt_int(given, "max_groups", default=5000, low=1, high=50_000),
+        most=_opt_int(
+            given, "max_groups", default=DEFAULT_MAX_GROUPS, low=1, high=LARGEST_MAX_GROUPS
+        ),
         to_file=False,
         out_key="groups",
+        skip=_opt_int(given, "skip", default=0, low=0, high=LARGEST_MAX_GROUPS),
     )
 
 

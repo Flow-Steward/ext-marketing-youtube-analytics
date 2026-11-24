@@ -38,7 +38,7 @@ from .transport import MAX_ANSWER_BYTES, Answer, Call, TooDeep, dumps_json
 
 REGISTRY_FILE = Path(__file__).resolve().parent / "registry.json"
 #: Inputs a paged step adds.
-PAGE_INPUTS = frozenset({"all_pages", "max_items"})
+PAGE_INPUTS = frozenset({"all_pages", "max_items", "skip"})
 #: The most records ``all_pages`` reads in one step.
 MAX_ITEMS = 100_000
 DEFAULT_ITEMS = 10_000
@@ -85,6 +85,7 @@ class Plan:
     content_type: str | None = None
     all_pages: bool = False
     max_items: int = DEFAULT_ITEMS
+    skip: int = 0
 
 
 def prepare(operation_id: str, operation_input: Mapping[str, Any]) -> Plan:
@@ -93,7 +94,9 @@ def prepare(operation_id: str, operation_input: Mapping[str, Any]) -> Plan:
     given = {k: v for k, v in operation_input.items() if k != "connection_ref"}
     unknown = sorted(set(given) - inputs_of(entry))
     if unknown:
-        raise invalid(f"The step input has unknown fields: {', '.join(unknown[:10])}")
+        raise invalid(
+            f"The step input has unknown fields: {', '.join(unknown[: errors.LISTED_NAMES])}"
+        )
     path = entry["path"]
     for prm in entry["path_params"]:
         value = given.get(prm["input"])
@@ -118,6 +121,8 @@ def prepare(operation_id: str, operation_input: Mapping[str, Any]) -> Plan:
             plan.query += [(prm["name"], wire(item)) for item in checked]
         else:
             plan.query.append((prm["name"], wire(checked)))
+    for names in entry.get("exactly_one", []):
+        _exactly_one(given, names)
     if entry["pager"]:
         flag = given.get("all_pages", False)
         if not isinstance(flag, bool):
@@ -129,8 +134,30 @@ def prepare(operation_id: str, operation_input: Mapping[str, Any]) -> Plan:
             plan.max_items = integer(
                 {"minimum": 1, "maximum": MAX_ITEMS}, given["max_items"], "max_items"
             )
+        if given.get("skip") not in (None, ""):
+            if not flag:
+                raise invalid("skip applies only with all_pages")
+            plan.skip = integer({"minimum": 0, "maximum": MAX_ITEMS}, given["skip"], "skip")
     _body(entry, given, plan)
     return plan
+
+
+def _exactly_one(given: Mapping[str, Any], names: list[str]) -> None:
+    """Exactly one of ``names`` is given; a true/false input counts only when true, and
+    false is refused (it would ask for nothing)."""
+    chosen = []
+    for name in names:
+        value = given.get(name)
+        if value is False:
+            raise invalid(f"{name} can only be true; leave it out to use {_or(names, name)}")
+        if value is not None and value != "" and value != []:
+            chosen.append(name)
+    if len(chosen) != 1:
+        raise invalid(f"Give exactly one of {' or '.join(names)}")
+
+
+def _or(names: list[str], name: str) -> str:
+    return " or ".join(n for n in names if n != name)
 
 
 def _body(entry: Mapping[str, Any], given: Mapping[str, Any], plan: Plan) -> None:
@@ -147,7 +174,7 @@ def _body(entry: Mapping[str, Any], given: Mapping[str, Any], plan: Plan) -> Non
     if extra:
         raise invalid(
             f"body has fields the {shape['schema']} resource does not have: "
-            + ", ".join(extra[:10])
+            + ", ".join(extra[: errors.LISTED_NAMES])
         )
     plan.body = dumps_json(value).encode("utf-8")
     plan.content_type = "application/json"
@@ -203,7 +230,7 @@ def refuse_failed_report(context: Context, data: Any, shown: str) -> None:
     that the operation has failed". A read changed nothing."""
     failed = data.get("errors") if isinstance(data, Mapping) else None
     if failed:
-        detail = errors.safe_text(dumps_json(context.transport.scrub(failed)), 400)
+        detail = errors.safe_text(dumps_json(context.transport.scrub(failed)), errors.MESSAGE_TEXT)
         raise errors.no_effect(
             errors.UPSTREAM_FAILURE,
             f"YouTube Analytics answered {shown} with errors: {detail}",

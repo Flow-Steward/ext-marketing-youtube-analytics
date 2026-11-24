@@ -206,6 +206,11 @@ forms:
     widget_type: text
     required: false
     help_text: 'Start from this page: next_page_token of an earlier run that stopped early.'
+  - name: skip
+    label: Skip
+    widget_type: integer
+    required: false
+    help_text: 'With page_token: how many records of that page the earlier run already returned (its next_skip).'
 - operation_id: create_group
   title: Create group
   fields:
@@ -358,7 +363,13 @@ forms:
     label: Most records
     widget_type: integer
     required: false
-    help_text: 'With all_pages: the most records to read (default 10000), on whole pages.'
+    help_text: 'With all_pages: the most records to read (default 10000).'
+  - name: skip
+    label: Skip
+    widget_type: integer
+    required: false
+    help_text: 'With all_pages and page_token: how many records of that page an earlier run already returned
+      (its next_skip).'
 - operation_id: create_analytics_group
   title: Create analytics group
   fields:

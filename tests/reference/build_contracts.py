@@ -54,6 +54,10 @@ SOURCES: dict[str, dict[str, Any]] = {
         "downloaded": "2026-11-23",
     },
 }
+#: Inputs of which a method takes exactly one. groups.list: "if you do not specify a value
+#: for the id parameter, then you must set the mine parameter to true" (its id
+#: parameter); one or the other, never both (our decision). ``mine`` counts when true.
+EXACTLY_ONE: dict[str, list[list[str]]] = {"youtubeAnalytics.groups.list": [["id", "mine"]]}
 #: The answers whose ``errors`` field (schema Errors) says the operation failed.
 ERRORS_ANSWERS = frozenset(
     {
@@ -140,7 +144,7 @@ ERROR_CODES_WRITE = ERROR_CODES_READ + ["timeout_unknown"]
 WARNINGS_OUTPUT = composite_specs.WARNINGS
 PROCESSING_OUTPUTS = composite_specs.PROCESSING_OUTPUTS
 #: Inputs the generic steps reserve; no source parameter may take one of these names.
-RESERVED_INPUTS = frozenset({"connection_ref", "body", "all_pages", "max_items"})
+RESERVED_INPUTS = frozenset({"connection_ref", "body", "all_pages", "max_items", "skip"})
 
 
 # -- sources -------------------------------------------------------------------------------
@@ -389,6 +393,7 @@ def registry_entry(api: str, m: dict[str, Any], ids: dict[str, str]) -> dict[str
         # group answers carry the same Errors object ("The presence of an error field
         # signals that the operation has failed").
         "fails_with_errors": (m.get("response") or {}).get("$ref") in ERRORS_ANSWERS,
+        "exactly_one": EXACTLY_ONE.get(method_id, []),
         "path_params": path_params,
         "query": query,
         "body": body,
@@ -575,7 +580,24 @@ def step_inputs(entry: dict[str, Any]) -> list[dict[str, Any]]:
                     "minimum": 1,
                     "maximum": 100000,
                     "title": "Most records",
-                    "description": "With all_pages: the most records to read (default 10000), on whole pages.",
+                    "description": "With all_pages: the most records to read (default 10000).",
+                },
+                "widget": "integer",
+            }
+        )
+        rows.append(
+            {
+                "name": "skip",
+                "required": False,
+                "schema": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100000,
+                    "title": "Skip",
+                    "description": (
+                        "With all_pages and page_token: how many records of that page an "
+                        "earlier run already returned (its next_skip)."
+                    ),
                 },
                 "widget": "integer",
             }
@@ -1109,8 +1131,9 @@ def api_pages(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
             "- **Results.** A generated step returns `status`, `data` (YouTube's JSON), `etag` "
             "and `warnings`; Get analytics groups also returns `items`, `count`, `complete` "
             "and `next_page_token`.",
-            "- **Lists.** With `all_pages` a list step reads page after page; when it stops "
-            "early, `next_page_token` is where the next run starts, so nothing is skipped or "
+            "- **Lists.** With `all_pages` a list step reads page after page and never returns "
+            "more than asked for; when it stops early, `next_page_token` and `next_skip` are "
+            "where the next run starts (`page_token` and `skip`), so nothing is skipped or "
             "read twice.",
             "- **Request bodies** are the YouTube resource as JSON in `body`. A field the "
             "resource does not have is refused before sending.",

@@ -14,7 +14,7 @@ components:
 
     Action id `get_analytics_groups` · reads only · YouTube: `GET /v2/groups`
 
-    Inputs: `page_token`, `mine`, `id`, `on_behalf_of_content_owner`, `all_pages`, `max_items`.
+    Inputs: `page_token`, `mine`, `id`, `on_behalf_of_content_owner`, `all_pages`, `max_items`, `skip`.
 
     ### Create analytics group
 

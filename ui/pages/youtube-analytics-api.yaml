@@ -15,7 +15,7 @@ components:
     - **Numbers.** Report values are exact decimals, never rounded through floating point.
     - **Quota.** The YouTube Analytics API does not report a quota in its answers; when a limit is reached YouTube refuses and the step says so.
     - **Results.** A generated step returns `status`, `data` (YouTube's JSON), `etag` and `warnings`; Get analytics groups also returns `items`, `count`, `complete` and `next_page_token`.
-    - **Lists.** With `all_pages` a list step reads page after page; when it stops early, `next_page_token` is where the next run starts, so nothing is skipped or read twice.
+    - **Lists.** With `all_pages` a list step reads page after page and never returns more than asked for; when it stops early, `next_page_token` and `next_skip` are where the next run starts (`page_token` and `skip`), so nothing is skipped or read twice.
     - **Request bodies** are the YouTube resource as JSON in `body`. A field the resource does not have is refused before sending.
     - **Changes are sent once.** A step that changes data is never retried automatically; when its outcome is unclear it says so, and you check YouTube before running it again. Test runs never send changes.
 
@@ -73,9 +73,9 @@ components:
 
     Action id `list_groups` · reads only · YouTube: `GET /v2/groups`
 
-    Inputs: `max_groups`, `page_token`.
+    Inputs: `max_groups`, `page_token`, `skip`.
 
-    Results: `groups`, `count`, `complete`, `next_page_token`, `warnings`.
+    Results: `groups`, `count`, `complete`, `next_page_token`, `next_skip`, `warnings`.
 
     ### Create group
 

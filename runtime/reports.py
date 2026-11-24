@@ -32,7 +32,13 @@ from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
 from typing import Any
 
+from . import errors
 from .errors import invalid
+
+#: Characters of a refused value shown back in the message (our decision).
+SHOWN_VALUE_LENGTH = 40
+#: Alternatives a refusal lists for a metric that needs other dimensions (our decision).
+LISTED_ALTERNATIVES = 5
 
 _NAME = re.compile(r"^[A-Za-z][A-Za-z0-9]*$")
 _SORT_KEY = re.compile(r"^-?[A-Za-z][A-Za-z0-9]*$")
@@ -90,7 +96,9 @@ def names(values: Sequence[str], what: str) -> list[str]:
     out: list[str] = []
     for value in values:
         if not _NAME.fullmatch(value):
-            raise invalid(f"{what} must be names such as views or day, not {value[:40]!r}")
+            raise invalid(
+                f"{what} must be names such as views or day, not {value[:SHOWN_VALUE_LENGTH]!r}"
+            )
         if value in out:
             raise invalid(f"{what} names {value} twice")
         out.append(value)
@@ -192,14 +200,14 @@ def check(
     if unknown:
         raise invalid(
             "No channel report of YouTube's report tables has the metrics "
-            + ", ".join(unknown[:10])
+            + ", ".join(unknown[: errors.LISTED_NAMES])
         )
     allowed, needs = matching(reports, request)
     if not allowed:
         if needs:
             raise invalid(
                 "YouTube's channel report tables allow these dimensions, metrics and filters "
-                "only with " + "; or ".join(needs[:5])
+                "only with " + "; or ".join(needs[:LISTED_ALTERNATIVES])
             )
         what = f"dimensions [{', '.join(request.dimensions) or 'none'}]"
         what += f", metrics [{', '.join(request.metrics)}]"
@@ -212,7 +220,9 @@ def check(
         paid = sorted(set(request.metrics) & monetary(reports))
         if paid:
             raise invalid(
-                "Revenue metrics (" + ", ".join(paid[:10]) + ") need the Google scope "
+                "Revenue metrics ("
+                + ", ".join(paid[: errors.LISTED_NAMES])
+                + ") need the Google scope "
                 "yt-analytics-monetary.readonly: use a connection of the type YouTube channel "
                 "analytics with revenue"
             )

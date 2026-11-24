@@ -42,6 +42,8 @@ def minimal_input(entry: dict[str, Any]) -> dict[str, Any]:
             given[prm["input"]] = "2026-01-01T00:00:00Z"
         else:
             given[prm["input"]] = "x1"
+    for names in entry["exactly_one"]:
+        given[names[-1]] = True
     body = entry["body"]
     if body and body["required"]:
         given["body"] = {body["json"]["properties"][0]: "x"}
@@ -191,12 +193,71 @@ def test_max_items_needs_all_pages() -> None:
     assert result["error_code"] == "invalid_payload"
 
 
-def test_all_pages_stops_at_max_items_on_whole_pages() -> None:
+def test_all_pages_never_returns_more_than_max_items() -> None:
+    """groups.list has no page size: the page that crosses max_items is cut, and the
+    continuation names that page and how many of its records were returned."""
     fake = FakeYouTube(page(["a", "b"], "T2"), page(["c", "d"], "T3"))
-    given = {"mine": True, "all_pages": True, "max_items": 3}
+    given: dict[str, Any] = {"mine": True, "all_pages": True, "max_items": 3}
     out = run("get_analytics_groups", given, fake)["result"]
-    assert [i["id"] for i in out["items"]] == ["a", "b", "c", "d"]
-    assert out["complete"] is False and out["next_page_token"] == "T3"
+    assert [i["id"] for i in out["items"]] == ["a", "b", "c"]
+    assert out["complete"] is False
+    assert out["next_page_token"] == "T2" and out["next_skip"] == 1
+    assert "page_token T2 and skip 1" in out["warnings"][-1]
+    # The next run asks for the same page and leaves out what was returned.
+    fake = FakeYouTube(page(["c", "d"], "T3"), page(["e"]))
+    given = {"mine": True, "all_pages": True, "page_token": "T2", "skip": 1}
+    out = run("get_analytics_groups", given, fake)["result"]
+    assert dict(fake.calls[0].query)["pageToken"] == "T2"
+    assert [i["id"] for i in out["items"]] == ["d", "e"]
+    assert out["complete"] is True and out["next_skip"] is None
+
+
+def test_max_items_of_one_returns_one() -> None:
+    fake = FakeYouTube(page(["a", "b"], "T2"))
+    out = run("get_analytics_groups", {"mine": True, "all_pages": True, "max_items": 1}, fake)
+    assert [i["id"] for i in out["result"]["items"]] == ["a"]
+    assert out["result"]["next_page_token"] is None and out["result"]["next_skip"] == 1
+
+
+def test_list_groups_never_returns_more_than_max_groups() -> None:
+    fake = FakeYouTube(page(["a", "b"], "T2"))
+    out = run("list_groups", {"max_groups": 1}, fake)["result"]
+    assert [g["id"] for g in out["groups"]] == ["a"]
+    assert out["complete"] is False and out["next_skip"] == 1
+
+
+def test_a_skip_larger_than_the_page_is_refused() -> None:
+    fake = FakeYouTube(page(["a"], "T2"))
+    given = {"mine": True, "all_pages": True, "page_token": "T1", "skip": 5}
+    result = run("get_analytics_groups", given, fake)
+    assert result["error_code"] == "invalid_payload" and "skip is 5" in result["error"]
+
+
+def test_only_groups_list_lacks_a_page_size() -> None:
+    unsized = [k for k, v in REGISTRY.items() if v["pager"] and v["pager"]["size"] is None]
+    assert unsized == ["get_analytics_groups"]
+
+
+@pytest.mark.parametrize(
+    ("given", "field"),
+    [
+        ({}, "id or mine"),
+        ({"id": "G1", "mine": True}, "id or mine"),
+        ({"mine": False}, "mine can only be true"),
+    ],
+)
+def test_groups_list_takes_exactly_one_of_id_or_mine(given: dict[str, Any], field: str) -> None:
+    fake = FakeYouTube()
+    result = run("get_analytics_groups", given, fake)
+    assert result["error_code"] == "invalid_payload", result
+    assert field in result["error"]
+    assert fake.calls == []
+
+
+@pytest.mark.parametrize("given", [{"id": "G1"}, {"mine": True}])
+def test_groups_list_with_one_of_id_or_mine_is_sent(given: dict[str, Any]) -> None:
+    fake = FakeYouTube(page(["a"]))
+    assert run("get_analytics_groups", given, fake)["ok"] is True
 
 
 def test_all_pages_starts_from_the_page_token_given() -> None:

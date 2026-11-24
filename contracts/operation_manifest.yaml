@@ -565,6 +565,16 @@ operations:
       description: 'Start from this page: next_page_token of an earlier run that stopped early.'
       type: string
       maxLength: 1000
+  - name: skip
+    value_type: integer
+    required: false
+    schema:
+      title: Skip
+      type: integer
+      minimum: 0
+      maximum: 50000
+      description: 'With page_token: how many records of that page the earlier run already returned (its
+        next_skip).'
   outputs:
   - name: groups
     value_type: array
@@ -591,6 +601,14 @@ operations:
       - string
       - 'null'
       description: 'When complete is false: the page_token to start the next run from.'
+  - name: next_skip
+    value_type: integer
+    schema:
+      type: &id011
+      - integer
+      - 'null'
+      description: 'When complete is false: the skip to start the next run with, together with next_page_token
+        (records of that page already returned).'
   - name: warnings
     value_type: array
     schema:
@@ -602,6 +620,7 @@ operations:
   - result.count
   - result.complete
   - result.next_page_token
+  - result.next_skip
   - result.warnings
   error_codes: *id002
 - operation_id: create_group
@@ -1065,7 +1084,17 @@ operations:
       minimum: 1
       maximum: 100000
       title: Most records
-      description: 'With all_pages: the most records to read (default 10000), on whole pages.'
+      description: 'With all_pages: the most records to read (default 10000).'
+  - name: skip
+    value_type: integer
+    required: false
+    schema:
+      type: integer
+      minimum: 0
+      maximum: 100000
+      title: Skip
+      description: 'With all_pages and page_token: how many records of that page an earlier run already
+        returned (its next_skip).'
   outputs:
   - name: status
     value_type: integer
@@ -1111,6 +1140,12 @@ operations:
       - string
       - 'null'
       description: 'When complete is false: the page_token to start the next run from.'
+  - name: next_skip
+    value_type: integer
+    schema:
+      type: *id011
+      description: 'When complete is false: the skip to start the next run with, together with next_page_token
+        (records of that page already returned).'
   - name: etag
     value_type: text
     schema:
@@ -1131,6 +1166,7 @@ operations:
   - result.count
   - result.complete
   - result.next_page_token
+  - result.next_skip
   - result.etag
   - result.warnings
   error_codes: *id002
