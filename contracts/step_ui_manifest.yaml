@@ -8,15 +8,15 @@ forms:
   title: Get channel report
   fields:
   - name: start_date
-    label: From
+    label: Start date
     widget_type: text
     required: true
-    help_text: The first day, YYYY-MM-DD.
+    help_text: The first day of the report, YYYY-MM-DD.
   - name: end_date
-    label: To
+    label: End date
     widget_type: text
     required: true
-    help_text: The last day, YYYY-MM-DD.
+    help_text: The last day of the report, YYYY-MM-DD.
   - name: metrics
     label: Metrics
     widget_type: json
@@ -48,7 +48,7 @@ forms:
     label: Currency
     widget_type: text
     required: false
-    help_text: The currency of revenue metrics, such as EUR (default USD).
+    help_text: 'The currency of revenue metrics, an ISO 4217 code such as EUR (YouTube''s default: USD).'
   - name: channel_id
     label: Channel ID
     widget_type: text
@@ -74,15 +74,15 @@ forms:
     required: true
     help_text: The YouTube video ID.
   - name: start_date
-    label: From
+    label: Start date
     widget_type: text
     required: true
-    help_text: The first day, YYYY-MM-DD.
+    help_text: The first day of the report, YYYY-MM-DD.
   - name: end_date
-    label: To
+    label: End date
     widget_type: text
     required: true
-    help_text: The last day, YYYY-MM-DD.
+    help_text: The last day of the report, YYYY-MM-DD.
   - name: metrics
     label: Metrics
     widget_type: json
@@ -114,7 +114,7 @@ forms:
     label: Currency
     widget_type: text
     required: false
-    help_text: The currency of revenue metrics, such as EUR (default USD).
+    help_text: 'The currency of revenue metrics, an ISO 4217 code such as EUR (YouTube''s default: USD).'
   - name: channel_id
     label: Channel ID
     widget_type: text
@@ -135,15 +135,15 @@ forms:
   title: Get top videos
   fields:
   - name: start_date
-    label: From
+    label: Start date
     widget_type: text
     required: true
-    help_text: The first day, YYYY-MM-DD.
+    help_text: The first day of the report, YYYY-MM-DD.
   - name: end_date
-    label: To
+    label: End date
     widget_type: text
     required: true
-    help_text: The last day, YYYY-MM-DD.
+    help_text: The last day of the report, YYYY-MM-DD.
   - name: metrics
     label: Metrics
     widget_type: json
@@ -187,7 +187,7 @@ forms:
     label: Currency
     widget_type: text
     required: false
-    help_text: The currency of revenue metrics, such as EUR (default USD).
+    help_text: 'The currency of revenue metrics, an ISO 4217 code such as EUR (YouTube''s default: USD).'
   - name: channel_id
     label: Channel ID
     widget_type: text
@@ -205,12 +205,13 @@ forms:
     label: Page token
     widget_type: text
     required: false
-    help_text: 'Start from this page: next_page_token of an earlier run that stopped early.'
+    help_text: 'The page to start from: next_page_token of an earlier run that stopped early, or a nextPageToken
+      YouTube returned.'
   - name: skip
     label: Skip
     widget_type: integer
     required: false
-    help_text: 'With page_token: how many records of that page the earlier run already returned (its next_skip).'
+    help_text: 'With page_token: how many records of that page an earlier run already returned (its next_skip).'
 - operation_id: create_group
   title: Create group
   fields:
@@ -250,7 +251,7 @@ forms:
   title: Query analytics report
   fields:
   - name: filters
-    label: filters
+    label: Filters
     widget_type: text
     required: false
     help_text: A list of filters that should be applied when retrieving YouTube Analytics data. The Available
@@ -259,37 +260,35 @@ forms:
       semicolon (;), and the returned result table will satisfy both filters. For example, a filters parameter
       v
   - name: currency
-    label: currency
+    label: Currency
     widget_type: text
     required: false
-    help_text: The currency to which financial metrics should be converted. The default is US Dollar (USD).
-      If the result contains no financial metrics, this flag will be ignored. Responds with an error if
-      the specified currency is not recognized.
+    help_text: 'The currency of revenue metrics, an ISO 4217 code such as EUR (YouTube''s default: USD).'
   - name: max_results
-    label: maxResults
+    label: Most rows
     widget_type: integer
     required: false
     help_text: The maximum number of rows to include in the response.
   - name: dimensions
-    label: dimensions
+    label: Dimensions
     widget_type: text
     required: false
     help_text: A comma-separated list of YouTube Analytics dimensions, such as views or ageGroup,gender.
       See the Available Reports document for a list of the reports that you can retrieve and the dimensions
       used for those reports. Also see the Dimensions document for definitions of those dimensions.
   - name: sort
-    label: sort
+    label: Sort
     widget_type: text
     required: false
     help_text: A comma-separated list of dimensions or metrics that determine the sort order for YouTube
       Analytics data. By default the sort order is ascending. The '-' prefix causes descending sort order.
   - name: start_date
-    label: startDate
+    label: Start date
     widget_type: text
     required: true
-    help_text: The start date for fetching YouTube Analytics data. The value should be in YYYY-MM-DD format.
+    help_text: The first day of the report, YYYY-MM-DD.
   - name: ids
-    label: ids
+    label: Report owner
     widget_type: text
     required: true
     help_text: Identifies the YouTube channel or content owner for which you are retrieving YouTube Analytics
@@ -298,24 +297,24 @@ forms:
       owner, set the ids parameter value to contentOwner==OWNER_NAME, where OWNER_NAME is the CMS name
       of the con
   - name: end_date
-    label: endDate
+    label: End date
     widget_type: text
     required: true
-    help_text: The end date for fetching YouTube Analytics data. The value should be in YYYY-MM-DD format.
+    help_text: The last day of the report, YYYY-MM-DD.
   - name: include_historical_channel_data
-    label: includeHistoricalChannelData
+    label: Include historical channel data
     widget_type: boolean
     required: false
     help_text: If set to true historical data (i.e. channel data from before the linking of the channel
       to the content owner) will be retrieved.
   - name: start_index
-    label: startIndex
+    label: First row
     widget_type: integer
     required: false
     help_text: An index of the first entity to retrieve. Use this parameter as a pagination mechanism
       along with the max-results parameter (one-based, inclusive).
   - name: metrics
-    label: metrics
+    label: Metrics
     widget_type: text
     required: true
     help_text: A comma-separated list of YouTube Analytics metrics, such as views or likes,dislikes. See
@@ -325,19 +324,19 @@ forms:
   title: Get analytics groups
   fields:
   - name: page_token
-    label: pageToken
+    label: Page token
     widget_type: text
     required: false
-    help_text: The pageToken parameter identifies a specific page in the result set that should be returned.
-      In an API response, the nextPageToken property identifies the next page that can be retrieved.
+    help_text: 'The page to start from: next_page_token of an earlier run that stopped early, or a nextPageToken
+      YouTube returned.'
   - name: mine
-    label: mine
+    label: Mine
     widget_type: boolean
     required: false
     help_text: This parameter can only be used in a properly authorized request. Set this parameter's
       value to true to retrieve all groups owned by the authenticated user.
   - name: id
-    label: id
+    label: IDs
     widget_type: text
     required: false
     help_text: The id parameter specifies a comma-separated list of the YouTube group ID(s) for the resource(s)
@@ -345,14 +344,11 @@ forms:
       the id property specifies the group's YouTube group ID. Note that if you do not specify a value
       for the id parameter, then you must set the mine parameter to true.
   - name: on_behalf_of_content_owner
-    label: onBehalfOfContentOwner
+    label: On behalf of content owner
     widget_type: text
     required: false
-    help_text: 'This parameter can only be used in a properly authorized request. Note: This parameter
-      is intended exclusively for YouTube content partners that own and manage many different YouTube
-      channels. The onBehalfOfContentOwner parameter indicates that the request''s authorization credentials
-      identify a YouTube user who is acting on behalf of the content owner specified in the parameter
-      value. It allows co'
+    help_text: 'For YouTube content partners only: the content owner the request is made for. The connection
+      must be authorized by a CMS account linked to that content owner.'
   - name: all_pages
     label: All pages
     widget_type: boolean
@@ -368,20 +364,16 @@ forms:
     label: Skip
     widget_type: integer
     required: false
-    help_text: 'With all_pages and page_token: how many records of that page an earlier run already returned
-      (its next_skip).'
+    help_text: 'With page_token: how many records of that page an earlier run already returned (its next_skip).'
 - operation_id: create_analytics_group
   title: Create analytics group
   fields:
   - name: on_behalf_of_content_owner
-    label: onBehalfOfContentOwner
+    label: On behalf of content owner
     widget_type: text
     required: false
-    help_text: 'This parameter can only be used in a properly authorized request. Note: This parameter
-      is intended exclusively for YouTube content partners that own and manage many different YouTube
-      channels. The onBehalfOfContentOwner parameter indicates that the request''s authorization credentials
-      identify a YouTube user who is acting on behalf of the content owner specified in the parameter
-      value. It allows co'
+    help_text: 'For YouTube content partners only: the content owner the request is made for. The connection
+      must be authorized by a CMS account linked to that content owner.'
   - name: body
     label: Request body
     widget_type: json
@@ -392,14 +384,11 @@ forms:
   title: Update analytics group
   fields:
   - name: on_behalf_of_content_owner
-    label: onBehalfOfContentOwner
+    label: On behalf of content owner
     widget_type: text
     required: false
-    help_text: 'This parameter can only be used in a properly authorized request. Note: This parameter
-      is intended exclusively for YouTube content partners that own and manage many different YouTube
-      channels. The onBehalfOfContentOwner parameter indicates that the request''s authorization credentials
-      identify a YouTube user who is acting on behalf of the content owner specified in the parameter
-      value. It allows co'
+    help_text: 'For YouTube content partners only: the content owner the request is made for. The connection
+      must be authorized by a CMS account linked to that content owner.'
   - name: body
     label: Request body
     widget_type: json
@@ -410,49 +399,40 @@ forms:
   title: Delete analytics group
   fields:
   - name: id
-    label: id
+    label: IDs
     widget_type: text
     required: false
     help_text: The id parameter specifies the YouTube group ID of the group that is being deleted.
   - name: on_behalf_of_content_owner
-    label: onBehalfOfContentOwner
+    label: On behalf of content owner
     widget_type: text
     required: false
-    help_text: 'This parameter can only be used in a properly authorized request. Note: This parameter
-      is intended exclusively for YouTube content partners that own and manage many different YouTube
-      channels. The onBehalfOfContentOwner parameter indicates that the request''s authorization credentials
-      identify a YouTube user who is acting on behalf of the content owner specified in the parameter
-      value. It allows co'
+    help_text: 'For YouTube content partners only: the content owner the request is made for. The connection
+      must be authorized by a CMS account linked to that content owner.'
 - operation_id: get_analytics_group_items
   title: Get analytics group items
   fields:
   - name: group_id
-    label: groupId
+    label: Group ID
     widget_type: text
     required: false
     help_text: The groupId parameter specifies the unique ID of the group for which you want to retrieve
       group items.
   - name: on_behalf_of_content_owner
-    label: onBehalfOfContentOwner
+    label: On behalf of content owner
     widget_type: text
     required: false
-    help_text: 'This parameter can only be used in a properly authorized request. Note: This parameter
-      is intended exclusively for YouTube content partners that own and manage many different YouTube
-      channels. The onBehalfOfContentOwner parameter indicates that the request''s authorization credentials
-      identify a YouTube user who is acting on behalf of the content owner specified in the parameter
-      value. It allows co'
+    help_text: 'For YouTube content partners only: the content owner the request is made for. The connection
+      must be authorized by a CMS account linked to that content owner.'
 - operation_id: add_analytics_group_item
   title: Add analytics group item
   fields:
   - name: on_behalf_of_content_owner
-    label: onBehalfOfContentOwner
+    label: On behalf of content owner
     widget_type: text
     required: false
-    help_text: 'This parameter can only be used in a properly authorized request. Note: This parameter
-      is intended exclusively for YouTube content partners that own and manage many different YouTube
-      channels. The onBehalfOfContentOwner parameter indicates that the request''s authorization credentials
-      identify a YouTube user who is acting on behalf of the content owner specified in the parameter
-      value. It allows co'
+    help_text: 'For YouTube content partners only: the content owner the request is made for. The connection
+      must be authorized by a CMS account linked to that content owner.'
   - name: body
     label: Request body
     widget_type: json
@@ -463,16 +443,13 @@ forms:
   title: Remove analytics group item
   fields:
   - name: id
-    label: id
+    label: IDs
     widget_type: text
     required: false
     help_text: The id parameter specifies the YouTube group item ID of the group item that is being deleted.
   - name: on_behalf_of_content_owner
-    label: onBehalfOfContentOwner
+    label: On behalf of content owner
     widget_type: text
     required: false
-    help_text: 'This parameter can only be used in a properly authorized request. Note: This parameter
-      is intended exclusively for YouTube content partners that own and manage many different YouTube
-      channels. The onBehalfOfContentOwner parameter indicates that the request''s authorization credentials
-      identify a YouTube user who is acting on behalf of the content owner specified in the parameter
-      value. It allows co'
+    help_text: 'For YouTube content partners only: the content owner the request is made for. The connection
+      must be authorized by a CMS account linked to that content owner.'

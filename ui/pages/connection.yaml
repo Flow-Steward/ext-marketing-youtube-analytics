@@ -1,6 +1,7 @@
 page_id: connection
 title: Connection
 description: Connect a YouTube channel's analytics to this project.
+project_scoped: true
 components:
   - component_id: youtube_analytics_connections
     type: connection_form
@@ -11,15 +12,11 @@ components:
       connection_type: youtube_analytics_channel
       oauth_intent: connect
       test_action: test_connection
-  - component_id: youtube_analytics_monetary_connections
-    type: connection_form
-    title: YouTube channel analytics with revenue
-    description: Channels authorized also for revenue and ad performance metrics. The channel must be in the YouTube Partner Program.
-    data:
-      oauth_provider_id: google_youtube
-      connection_type: youtube_analytics_channel_monetary
-      oauth_intent: connect
-      test_action: test_connection
+  - component_id: connection_when
+    type: markdown
+    title: When to use it
+    body: |
+      For every report and group step except revenue metrics. Flow Steward asks Google for `yt-analytics.readonly`, and `youtube.readonly` to learn which channel is connected. For revenue and ad performance metrics use **Connection with revenue**.
   - component_id: connection_how
     anchor_id: client-credentials
     type: markdown

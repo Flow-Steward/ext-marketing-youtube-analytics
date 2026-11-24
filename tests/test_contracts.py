@@ -72,7 +72,7 @@ def registry_counts(registry: dict[str, Any]) -> dict[str, int]:
 
 
 def test_the_coverage_page_names_what_is_not_in_this_extension() -> None:
-    body = load("ui/pages/coverage.yaml")["components"][0]["body"]
+    body = load("ui/pages/api-coverage.yaml")["components"][0]["body"]
     assert "YouTube Reporting API" in body and "YouTube Data API v3" in body
     assert "flowsteward.youtube" in body
 
@@ -333,12 +333,12 @@ def test_the_icon_is_a_square_png_with_the_logo_at_least_100_px_tall() -> None:
 
 def test_version_step_limit_and_changelog() -> None:
     manifest = load("extension.yaml")
-    assert manifest["version"] == "0.1.1" == build_contracts.VERSION
+    assert manifest["version"] == "0.1.2" == build_contracts.VERSION
     assert manifest["entrypoint"]["timeout_seconds"] == 600
     assert limits.STEP_TIMEOUT_SECONDS == 600
     changelog = (BUNDLE / "CHANGELOG.md").read_text(encoding="utf-8")
-    assert changelog.splitlines()[2].startswith("## 0.1.1")
-    assert "0.1.1" in json.dumps(load("ui/pages/changelog.yaml"))
+    assert changelog.splitlines()[2].startswith("## 0.1.2")
+    assert "0.1.2" in json.dumps(load("ui/pages/changelog.yaml"))
 
 
 def test_vendor_listing_and_repository() -> None:

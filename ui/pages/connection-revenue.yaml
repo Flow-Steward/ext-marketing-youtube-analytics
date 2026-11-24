@@ -1,0 +1,21 @@
+page_id: connection-revenue
+title: Connection with revenue
+description: Connect a channel whose reports also include revenue and ad performance.
+project_scoped: true
+components:
+  - component_id: youtube_analytics_monetary_connections
+    type: connection_form
+    title: YouTube channel analytics with revenue
+    description: Channels authorized also for revenue and ad performance metrics. Flow Steward keeps the authorization, renews it and never shows it again.
+    data:
+      oauth_provider_id: google_youtube
+      connection_type: youtube_analytics_channel_monetary
+      oauth_intent: connect
+      test_action: test_connection
+  - component_id: revenue_when
+    type: markdown
+    title: When to use it
+    body: |
+      For reports with revenue and ad performance metrics, such as `estimatedRevenue`, `adImpressions` or `cpm`, and for every other step as well. Flow Steward asks Google for `yt-analytics.readonly`, `yt-analytics-monetary.readonly` and `youtube.readonly`.
+
+      YouTube gives revenue metrics for channels in the YouTube Partner Program. The Client ID and Client Secret are the same as for the other connection type (see **Connection**).

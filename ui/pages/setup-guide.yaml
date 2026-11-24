@@ -1,35 +1,128 @@
 page_id: setup-guide
 title: Setup Guide
-description: Connect a YouTube channel's analytics in a few minutes.
+description: Set up the Google OAuth client once, then connect each channel's analytics.
+project_scoped: true
 components:
-  - component_id: setup_steps
+  - component_id: setup_operator
     type: markdown
-    title: Connect YouTube Analytics
+    title: For the person who sets up Google Cloud
     body: |
-      1. **Create or choose a Google Cloud project** at [console.cloud.google.com](https://console.cloud.google.com).
-      2. **Enable the API.** In the API Library enable **YouTube Analytics API**.
-      3. **Configure the OAuth consent screen** of the project. Whether the app must be verified by Google, and who may sign in while it is in testing, follows Google's policies for the scopes it asks for.
-      4. **Create an OAuth client** of the type **Web application** and add the OAuth Redirect URI shown on the **Connection** page as an authorized redirect URI, exactly as shown.
-      5. **Copy the Client ID and Client Secret** of that client into **Connection** and save them.
-      6. Choose a connection type, press **Connect**, sign in with the Google account of the channel, choose the channel and allow the access. Then press **Test connection**.
-      7. Add YouTube Analytics steps to a workflow. Start with **Test connection**, **Get channel report** or **Get top videos**.
+      This needs a Google account that can create projects in
+      [Google Cloud](https://console.cloud.google.com). The people who later connect
+      their channels do not need one.
 
-      [Google: OAuth 2.0 for web server applications](https://developers.google.com/identity/protocols/oauth2/web-server)
+      Flow Steward authorizes with Google's OAuth 2.0 authorization code flow and your
+      own OAuth client. The same client can serve the YouTube extension and this one.
 
-      [YouTube Analytics API: channel reports](https://developers.google.com/youtube/analytics/channel_reports)
+      **First, get the redirect URI from Flow Steward.** Open this extension's
+      **Connection** page in the project you are configuring and copy the
+      **OAuth Redirect URI**. Google refuses the authorization unless it matches
+      character for character. Each Flow Steward project has its own; add every one you
+      use to the OAuth client.
+
+      **Create the project and enable the APIs**
+
+      1. Google Cloud → project picker → **New project**, or choose an existing one.
+      2. **APIs & Services → Library** → **YouTube Analytics API** → **Enable**.
+      3. Also enable **YouTube Data API v3**: after the authorization the extension reads
+         which channel was connected through it.
+
+      **Configure the OAuth consent screen**
+
+      1. **APIs & Services → OAuth consent screen** (Google Auth Platform → Branding,
+         Audience, Data access).
+      2. **User type: External** for channels of any Google account, or **Internal** if
+         every channel belongs to accounts of your Google Workspace organization.
+      3. App name, support email and developer contact.
+      4. **Data access → Add or remove scopes**: add
+         `https://www.googleapis.com/auth/yt-analytics.readonly` and
+         `https://www.googleapis.com/auth/youtube.readonly`, and
+         `yt-analytics-monetary.readonly` if you will read revenue.
+      5. **Audience**: while the app is in **Testing**, add every Google account that
+         will connect a channel as a **test user**.
+
+      **Testing or In production.** For an external app in **Testing**, Google issues
+      refresh tokens that expire in 7 days: the connection then has to be connected
+      again every week. Publish the app (**In production**) for lasting connections.
+      Whether Google must verify the app first follows Google's policies for the scopes
+      it asks for.
+
+      **Create the OAuth client**
+
+      1. **APIs & Services → Credentials → Create credentials → OAuth client ID**.
+      2. **Application type: Web application**.
+      3. **Authorized redirect URIs**: add the OAuth Redirect URI from Flow Steward.
+      4. **Create**, then copy the **Client ID** and **Client Secret**.
+
+      **Store the credentials in Flow Steward.** On the **Connection** page enter the
+      Client ID and Client Secret and save them. The secret is kept encrypted and never
+      shown again.
+  - component_id: setup_connector
+    type: markdown
+    title: For the person who connects a channel
+    body: |
+      You need the Google account that owns or manages the channel, and operator or
+      admin access to the Flow Steward project. You do not create or copy any token.
+
+      1. Open this extension's **Connection** page — or **Connection with revenue** for
+         revenue metrics — and press **Connect**.
+      2. Google opens its sign-in page. Choose the account, then the channel.
+      3. Google shows what the app asks for. Allow it.
+      4. You land back in Flow Steward with the connection created. Press
+         **Test connection**: it reads the channel the authorization belongs to.
+
+      Each connection is one channel. Connecting the same connection to another channel
+      is refused, so a workflow never reads a different channel than the one it was
+      built for. Add a new connection for another channel.
   - component_id: setup_types
     type: markdown
     title: Which connection type
     body: |
-      - **YouTube channel analytics** asks for `yt-analytics.readonly`: analytics reports of the channel and its YouTube Analytics groups.
-      - **YouTube channel analytics with revenue** also asks for `yt-analytics-monetary.readonly`: revenue and ad performance metrics. YouTube gives them only for channels in the YouTube Partner Program.
-      - Both also ask for `youtube.readonly` only to learn which channel is connected; a reconnection to another channel is refused. Enable the YouTube Data API v3 in the Google Cloud project as well.
+      - **YouTube channel analytics** (page **Connection**) asks for
+        `yt-analytics.readonly`: every report of the channel and its YouTube Analytics
+        groups.
+      - **YouTube channel analytics with revenue** (page **Connection with revenue**) also
+        asks for `yt-analytics-monetary.readonly`: revenue and ad performance metrics,
+        such as `estimatedRevenue`, `adImpressions` and `cpm`. YouTube gives them for
+        channels in the YouTube Partner Program.
 
-      The same Google OAuth client can serve the YouTube extension and this one.
+      Both also ask for `youtube.readonly`, only to learn which channel is connected.
+
+      Videos, playlists and comments come from the companion extension
+      [YouTube](https://github.com/Flow-Steward/ext-media-youtube) (`flowsteward.youtube`).
   - component_id: setup_reports
     type: markdown
     title: Choosing metrics and dimensions
     body: |
-      YouTube supports only some combinations of dimensions, metrics and filters. The report steps check a request against YouTube's report tables before they send it and say what is missing, for example a sort or at most 25 rows. The **Report tables** page lists every allowed combination.
+      YouTube answers only some combinations of dimensions, metrics and filters, listed
+      in its channel report tables. **Get channel report**, **Get video report** and
+      **Get top videos** check a request against those tables before they send it and
+      say what is missing — for example a sort, or at most 25 rows. The **Report tables**
+      page lists every allowed combination.
 
-      A **test run** of a workflow never sends changes.
+      Dates are days in `YYYY-MM-DD`. Report numbers are exact decimals. A long report can
+      be saved as a JSON workflow file with `output: file`.
+  - component_id: setup_errors
+    type: markdown
+    title: If something fails
+    body: |
+      - **redirect_uri_mismatch** on Google's page — add the OAuth Redirect URI shown on
+        **Connection** to the OAuth client, exactly as shown.
+      - **access_denied** or "has not completed the Google verification process" — the
+        account is not a test user of an app in **Testing**; add it on **Audience**, or
+        publish the app.
+      - **invalid_client** — the Client ID or Client Secret is wrong, or the client was
+        deleted. Copy both again from Google Cloud.
+      - **The connection stops working after a week** — the app is in **Testing**;
+        publish it, then connect again.
+      - **A step is refused with HTTP 403 saying the API is not enabled** — enable
+        YouTube Analytics API (and YouTube Data API v3) in the project.
+      - **Test connection is refused with HTTP 403** — the Google account has no YouTube
+        channel, or another account was chosen. Connect again and choose the channel.
+      - **Revenue metrics are refused with HTTP 403** — the connection is not the one with
+        revenue, or the channel is not in the YouTube Partner Program.
+      - **The request is refused before it is sent** — the combination of dimensions,
+        metrics and filters is not in YouTube's report tables; the message says what to
+        change.
+
+      A test run of a workflow never sends changes to YouTube.
