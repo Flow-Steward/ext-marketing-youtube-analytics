@@ -3,6 +3,7 @@
 page_id: report-tables
 title: Report tables
 description: The dimension, metric and filter combinations YouTube allows.
+project_scoped: false
 components:
 - component_id: report_tables
   type: markdown

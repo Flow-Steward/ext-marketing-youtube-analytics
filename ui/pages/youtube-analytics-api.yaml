@@ -3,6 +3,7 @@
 page_id: youtube-analytics-api
 title: YouTube Analytics API
 description: How the YouTube Analytics steps work, and the everyday steps.
+project_scoped: false
 components:
 - component_id: api_overview
   type: markdown

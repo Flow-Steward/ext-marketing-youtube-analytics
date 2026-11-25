@@ -3,6 +3,7 @@
 page_id: youtube-analytics-api-reports
 title: 'YouTube Analytics API: Reports'
 description: The 1 reports steps.
+project_scoped: false
 components:
 - component_id: steps_reports
   type: markdown
